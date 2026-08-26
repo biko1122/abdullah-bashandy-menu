@@ -162,7 +162,7 @@ export const menu = [
   {
     id: 'fs-001',
     name: 'فول ذرة',
-    description: '',
+    description: 'فول مدمس بزيت الذرة والكمون',
     category: 'foul-sandwiches',
     price: 9,
     popular: true,
@@ -173,7 +173,7 @@ export const menu = [
   {
     id: 'fs-002',
     name: 'فول هالبينو',
-    description: '',
+    description: 'فول مع شرايح هالبينو مخللة',
     category: 'foul-sandwiches',
     price: 15,
     popular: false,
@@ -184,7 +184,7 @@ export const menu = [
   {
     id: 'fs-003',
     name: 'فول حار',
-    description: '',
+    description: 'فول متقلب بالشطة البلدي',
     category: 'foul-sandwiches',
     price: 10,
     popular: false,
@@ -195,7 +195,7 @@ export const menu = [
   {
     id: 'fs-004',
     name: 'فول المدلع',
-    description: 'جديد',
+    description: 'فول بخلطة بشندي السرية والشبت',
     category: 'foul-sandwiches',
     price: 12,
     popular: true,
@@ -206,7 +206,7 @@ export const menu = [
   {
     id: 'fs-005',
     name: 'فول دوبل',
-    description: '',
+    description: 'كمية فول مضاعفة في الرغيف',
     category: 'foul-sandwiches',
     price: 10,
     popular: false,
@@ -217,7 +217,7 @@ export const menu = [
   {
     id: 'fs-006',
     name: 'فول لبناني',
-    description: '',
+    description: 'فول بالطحينة والليمون على الطريقة اللبنانية',
     category: 'foul-sandwiches',
     price: 12,
     popular: false,
@@ -239,7 +239,7 @@ export const menu = [
   {
     id: 'fs-008',
     name: 'فول اسنكدراني',
-    description: '',
+    description: 'فول بالطماطم والفلفل والكزبرة',
     category: 'foul-sandwiches',
     price: 12,
     popular: false,
@@ -261,7 +261,7 @@ export const menu = [
   {
     id: 'fs-010',
     name: 'فول سمنة',
-    description: '',
+    description: 'فول متقلب بالسمنة البلدي',
     category: 'foul-sandwiches',
     price: 15,
     popular: false,
@@ -272,7 +272,7 @@ export const menu = [
   {
     id: 'fs-011',
     name: 'فول زيت زيتون',
-    description: '',
+    description: 'فول بزيت الزيتون والليمون',
     category: 'foul-sandwiches',
     price: 15,
     popular: false,
@@ -283,7 +283,7 @@ export const menu = [
   {
     id: 'fs-012',
     name: 'فول بسطرمة',
-    description: '',
+    description: 'فول مع شرايح بسطرمة',
     category: 'foul-sandwiches',
     price: 17,
     popular: false,
@@ -294,7 +294,7 @@ export const menu = [
   {
     id: 'fs-013',
     name: 'فول سجق',
-    description: '',
+    description: 'فول مع سجق مقلي',
     category: 'foul-sandwiches',
     price: 17,
     popular: false,
@@ -305,7 +305,7 @@ export const menu = [
   {
     id: 'fs-014',
     name: 'فول فينو',
-    description: '',
+    description: 'فول في رغيف فينو طري',
     category: 'foul-sandwiches',
     price: 13,
     popular: false,
@@ -316,7 +316,7 @@ export const menu = [
   {
     id: 'fs-015',
     name: 'فول بيض مسلوق',
-    description: '',
+    description: 'فول مع بيضة مسلوقة',
     category: 'foul-sandwiches',
     price: 16,
     popular: false,
@@ -327,7 +327,7 @@ export const menu = [
   {
     id: 'fs-016',
     name: 'فول اومليت',
-    description: '',
+    description: 'فول مع أومليت طازة',
     category: 'foul-sandwiches',
     price: 20,
     popular: false,
@@ -338,7 +338,7 @@ export const menu = [
   {
     id: 'fs-017',
     name: 'فول مع باذنجان',
-    description: '',
+    description: 'فول مع شرايح باذنجان مقلي',
     category: 'foul-sandwiches',
     price: 13,
     popular: false,
@@ -349,7 +349,7 @@ export const menu = [
   {
     id: 'fs-018',
     name: 'فول مع فلافل',
-    description: '',
+    description: 'فول وطعمية في رغيف واحد',
     category: 'foul-sandwiches',
     price: 12,
     popular: false,
@@ -360,7 +360,7 @@ export const menu = [
   {
     id: 'fs-019',
     name: 'فول اسكندراني بيض مسلوق',
-    description: '',
+    description: 'فول اسكندراني مع بيضة مسلوقة',
     category: 'foul-sandwiches',
     price: 17,
     popular: false,
@@ -371,7 +371,7 @@ export const menu = [
   {
     id: 'fs-020',
     name: 'فول علي باذنجان',
-    description: '',
+    description: 'فول متقلب على باذنجان مقلي',
     category: 'foul-sandwiches',
     price: 13,
     popular: false,
@@ -386,7 +386,7 @@ export const menu = [
   {
     id: 'ls-001',
     name: 'فلافل',
-    description: '',
+    description: 'أقراص طعمية مقرمشة طازة',
     category: 'falafel-sandwiches',
     price: 9,
     popular: true,
@@ -397,7 +397,7 @@ export const menu = [
   {
     id: 'ls-002',
     name: 'فلافل طرنشات طماطم',
-    description: '',
+    description: 'طعمية مع شرايح طماطم',
     category: 'falafel-sandwiches',
     price: 10,
     popular: false,
@@ -408,7 +408,7 @@ export const menu = [
   {
     id: 'ls-003',
     name: 'فلافل سلطه بلدي',
-    description: '',
+    description: 'طعمية مع سلطة بلدي',
     category: 'falafel-sandwiches',
     price: 10,
     popular: false,
@@ -419,7 +419,7 @@ export const menu = [
   {
     id: 'ls-004',
     name: 'فلافل محشية',
-    description: '',
+    description: 'طعمية محشية من جوّه',
     category: 'falafel-sandwiches',
     price: 11,
     popular: true,
@@ -430,7 +430,7 @@ export const menu = [
   {
     id: 'ls-005',
     name: 'فلافل بالسمسم',
-    description: '',
+    description: 'طعمية مغطية بالسمسم',
     category: 'falafel-sandwiches',
     price: 11,
     popular: false,
@@ -441,7 +441,7 @@ export const menu = [
   {
     id: 'ls-006',
     name: 'فلافل دوبل',
-    description: '',
+    description: 'كمية طعمية مضاعفة',
     category: 'falafel-sandwiches',
     price: 12,
     popular: false,
@@ -452,7 +452,7 @@ export const menu = [
   {
     id: 'ls-007',
     name: 'فلافل كيري',
-    description: '',
+    description: 'طعمية مع جبنة كيري',
     category: 'falafel-sandwiches',
     price: 20,
     popular: false,
@@ -463,7 +463,7 @@ export const menu = [
   {
     id: 'ls-008',
     name: 'فلافل بسطرمة',
-    description: '',
+    description: 'طعمية مع شرايح بسطرمة',
     category: 'falafel-sandwiches',
     price: 18,
     popular: false,
@@ -474,7 +474,7 @@ export const menu = [
   {
     id: 'ls-009',
     name: 'فلافل بسطرمة كيري',
-    description: '',
+    description: 'طعمية مع بسطرمة وجبنة كيري',
     category: 'falafel-sandwiches',
     price: 22,
     popular: false,
@@ -485,7 +485,7 @@ export const menu = [
   {
     id: 'ls-010',
     name: 'فلافل محشية فينو',
-    description: '',
+    description: 'طعمية محشية في رغيف فينو',
     category: 'falafel-sandwiches',
     price: 13,
     popular: false,
@@ -496,7 +496,7 @@ export const menu = [
   {
     id: 'ls-011',
     name: 'فلافل علي باباغنوج',
-    description: '',
+    description: 'طعمية مع باباغنوج',
     category: 'falafel-sandwiches',
     price: 15,
     popular: false,
@@ -507,7 +507,7 @@ export const menu = [
   {
     id: 'ls-012',
     name: 'فلافل علي مش',
-    description: '',
+    description: 'طعمية مع مش بلدي',
     category: 'falafel-sandwiches',
     price: 20,
     popular: false,
@@ -518,7 +518,7 @@ export const menu = [
   {
     id: 'ls-013',
     name: 'فلافل علي باذنجان',
-    description: '',
+    description: 'طعمية مع باذنجان مقلي',
     category: 'falafel-sandwiches',
     price: 15,
     popular: false,
@@ -529,7 +529,7 @@ export const menu = [
   {
     id: 'ls-014',
     name: 'فلافل علي بطاطس',
-    description: '',
+    description: 'طعمية مع بطاطس محمرة',
     category: 'falafel-sandwiches',
     price: 20,
     popular: false,
@@ -540,7 +540,7 @@ export const menu = [
   {
     id: 'ls-015',
     name: 'فلافل اومليت',
-    description: '',
+    description: 'طعمية مع أومليت',
     category: 'falafel-sandwiches',
     price: 20,
     popular: false,
@@ -551,7 +551,7 @@ export const menu = [
   {
     id: 'ls-016',
     name: 'فلافل مع بيض مسلوق',
-    description: '',
+    description: 'طعمية مع بيضة مسلوقة',
     category: 'falafel-sandwiches',
     price: 18,
     popular: false,
@@ -562,7 +562,7 @@ export const menu = [
   {
     id: 'ls-017',
     name: 'فلافل محشيه ع اوملت ع باذنجان',
-    description: '',
+    description: 'طعمية محشية مع أومليت وباذنجان',
     category: 'falafel-sandwiches',
     price: 25,
     popular: false,
@@ -573,7 +573,7 @@ export const menu = [
   {
     id: 'ls-018',
     name: 'فلافل ع بطاطس ع باذنجان',
-    description: '',
+    description: 'طعمية مع بطاطس وباذنجان مقلي',
     category: 'falafel-sandwiches',
     price: 22,
     popular: false,
@@ -584,7 +584,7 @@ export const menu = [
   {
     id: 'ls-019',
     name: 'فلافل علي صوابع علي مش',
-    description: '',
+    description: 'طعمية مع بطاطس صوابع ومش',
     category: 'falafel-sandwiches',
     price: 22,
     popular: false,
@@ -595,7 +595,7 @@ export const menu = [
   {
     id: 'ls-020',
     name: 'فلافل ع جبنه بيضاء',
-    description: '',
+    description: 'طعمية مع جبنة بيضاء',
     category: 'falafel-sandwiches',
     price: 20,
     popular: false,
@@ -606,7 +606,7 @@ export const menu = [
   {
     id: 'ls-021',
     name: 'فلافل ع فول ع صوابع',
-    description: '',
+    description: 'طعمية مع فول وبطاطس صوابع',
     category: 'falafel-sandwiches',
     price: 25,
     popular: false,
@@ -702,7 +702,7 @@ export const menu = [
   {
     id: 'sw-001',
     name: 'سندوتش شيبيسي',
-    description: '',
+    description: 'شيبسي مقرمش في رغيف',
     category: 'sandwiches',
     price: 13,
     popular: false,
@@ -713,7 +713,7 @@ export const menu = [
   {
     id: 'sw-002',
     name: 'بطاطس صوابع',
-    description: '',
+    description: 'بطاطس مقطعة صوابع ومحمرة',
     category: 'sandwiches',
     price: 15,
     popular: false,
@@ -724,7 +724,7 @@ export const menu = [
   {
     id: 'sw-003',
     name: 'بطاطس كاتشب او مايونيز',
-    description: '',
+    description: 'بطاطس محمرة بالكاتشب أو المايونيز',
     category: 'sandwiches',
     price: 17,
     popular: false,
@@ -735,7 +735,7 @@ export const menu = [
   {
     id: 'sw-004',
     name: 'بطاطس مكس',
-    description: '',
+    description: 'بطاطس بالكاتشب والمايونيز مع بعض',
     category: 'sandwiches',
     price: 20,
     popular: false,
@@ -746,7 +746,7 @@ export const menu = [
   {
     id: 'sw-005',
     name: 'بطاطس بالبيض المسلوق',
-    description: '',
+    description: 'بطاطس محمرة مع بيضة مسلوقة',
     category: 'sandwiches',
     price: 22,
     popular: false,
@@ -757,7 +757,7 @@ export const menu = [
   {
     id: 'sw-006',
     name: 'بطاطس بالاومليت',
-    description: '',
+    description: 'بطاطس محمرة مع أومليت',
     category: 'sandwiches',
     price: 23,
     popular: false,
@@ -768,7 +768,7 @@ export const menu = [
   {
     id: 'sw-007',
     name: 'بطاطس مع باباغنوج',
-    description: '',
+    description: 'بطاطس محمرة مع باباغنوج',
     category: 'sandwiches',
     price: 18,
     popular: false,
@@ -779,7 +779,7 @@ export const menu = [
   {
     id: 'sw-008',
     name: 'بطاطس مع مش',
-    description: '',
+    description: 'بطاطس محمرة مع مش بلدي',
     category: 'sandwiches',
     price: 18,
     popular: false,
@@ -790,7 +790,7 @@ export const menu = [
   {
     id: 'sw-009',
     name: 'بطاطس رومي',
-    description: '',
+    description: 'بطاطس محمرة بجبنة رومي',
     category: 'sandwiches',
     price: 35,
     popular: false,
@@ -801,7 +801,7 @@ export const menu = [
   {
     id: 'sw-010',
     name: 'بطاطس شيدر',
-    description: '',
+    description: 'بطاطس محمرة بصوص الشيدر',
     category: 'sandwiches',
     price: 35,
     popular: false,
@@ -812,7 +812,7 @@ export const menu = [
   {
     id: 'sw-011',
     name: 'بوريه',
-    description: '',
+    description: 'بطاطس مهروسة ناعمة',
     category: 'sandwiches',
     price: 12,
     popular: false,
@@ -823,7 +823,7 @@ export const menu = [
   {
     id: 'sw-012',
     name: 'بوريه مع زيت زيتون',
-    description: '',
+    description: 'بوريه بزيت الزيتون',
     category: 'sandwiches',
     price: 17,
     popular: false,
@@ -834,7 +834,7 @@ export const menu = [
   {
     id: 'sw-013',
     name: 'عجة بلدي',
-    description: '',
+    description: 'بيض مخفوق بالبقدونس والبصل',
     category: 'sandwiches',
     price: 25,
     popular: false,
@@ -856,7 +856,7 @@ export const menu = [
   {
     id: 'sw-015',
     name: 'مش',
-    description: '',
+    description: 'مش بلدي مخمّر',
     category: 'sandwiches',
     price: 13,
     popular: false,
@@ -867,7 +867,7 @@ export const menu = [
   {
     id: 'sw-016',
     name: 'باباغنوج',
-    description: '',
+    description: 'باذنجان مشوي بالطحينة',
     category: 'sandwiches',
     price: 13,
     popular: false,
@@ -878,7 +878,7 @@ export const menu = [
   {
     id: 'sw-017',
     name: 'مسقعة',
-    description: '',
+    description: 'باذنجان مقلي في صلصة طماطم',
     category: 'sandwiches',
     price: 13,
     popular: false,
@@ -889,7 +889,7 @@ export const menu = [
   {
     id: 'sw-018',
     name: 'مسقعة بالسجق',
-    description: '',
+    description: 'مسقعة بشرايح السجق',
     category: 'sandwiches',
     price: 25,
     popular: false,
@@ -900,7 +900,7 @@ export const menu = [
   {
     id: 'sw-019',
     name: 'باذنجان مقلي',
-    description: '',
+    description: 'شرايح باذنجان مقلية',
     category: 'sandwiches',
     price: 10,
     popular: false,
@@ -911,7 +911,7 @@ export const menu = [
   {
     id: 'sw-020',
     name: 'اومليت',
-    description: '',
+    description: 'بيض مخفوق مقلي',
     category: 'sandwiches',
     price: 13,
     popular: false,
@@ -922,7 +922,7 @@ export const menu = [
   {
     id: 'sw-021',
     name: 'بيض مسلوق',
-    description: '',
+    description: 'بيضة مسلوقة بالملح والكمون',
     category: 'sandwiches',
     price: 12,
     popular: false,
@@ -933,7 +933,7 @@ export const menu = [
   {
     id: 'sw-022',
     name: 'بيض مسلوق دوبل',
-    description: '',
+    description: 'بيضتين مسلوقين في الرغيف',
     category: 'sandwiches',
     price: 20,
     popular: false,
@@ -944,7 +944,7 @@ export const menu = [
   {
     id: 'sw-023',
     name: 'شكشوكة',
-    description: '',
+    description: 'بيض في صلصة طماطم وفلفل',
     category: 'sandwiches',
     price: 13,
     popular: false,
@@ -955,7 +955,7 @@ export const menu = [
   {
     id: 'sw-024',
     name: 'جبنة بيضاء',
-    description: '',
+    description: 'جبنة بيضاء طرية',
     category: 'sandwiches',
     price: 14,
     popular: false,
@@ -970,7 +970,7 @@ export const menu = [
   {
     id: 'gr-001',
     name: 'سجق اسكندراني',
-    description: '',
+    description: 'سجق متبل على الطريقة الإسكندراني',
     category: 'grill',
     price: 30,
     popular: false,
@@ -981,7 +981,7 @@ export const menu = [
   {
     id: 'gr-002',
     name: 'كبدة اسكندراني',
-    description: '',
+    description: 'كبدة بالفلفل والثوم',
     category: 'grill',
     price: 30,
     popular: false,
@@ -992,7 +992,7 @@ export const menu = [
   {
     id: 'gr-003',
     name: 'كفتة عالفحم',
-    description: '',
+    description: 'كفتة لحمة مشوية على الفحم',
     category: 'grill',
     price: 60,
     popular: true,
@@ -1014,7 +1014,7 @@ export const menu = [
   {
     id: 'gr-005',
     name: 'سوسيس',
-    description: '',
+    description: 'سوسيس مقلي سخن',
     category: 'grill',
     price: 45,
     popular: false,
@@ -1025,7 +1025,7 @@ export const menu = [
   {
     id: 'gr-006',
     name: 'سوسيس بالجبنة',
-    description: '',
+    description: 'سوسيس مع جبنة سايحة',
     category: 'grill',
     price: 55,
     popular: false,
@@ -1036,7 +1036,7 @@ export const menu = [
   {
     id: 'gr-007',
     name: 'سوسيس بالبيض',
-    description: '',
+    description: 'سوسيس مع بيض',
     category: 'grill',
     price: 55,
     popular: false,
@@ -1047,7 +1047,7 @@ export const menu = [
   {
     id: 'gr-008',
     name: 'سوسيس مكسيكان',
-    description: '',
+    description: 'سوسيس بصوص مكسيكي حار',
     category: 'grill',
     price: 60,
     popular: false,
@@ -1069,7 +1069,7 @@ export const menu = [
   {
     id: 'gr-010',
     name: 'برجر جامبو ساده',
-    description: '',
+    description: 'قطعة برجر كبيرة بالخضار',
     category: 'grill',
     price: 75,
     popular: false,
@@ -1080,7 +1080,7 @@ export const menu = [
   {
     id: 'gr-011',
     name: 'برجر جامبو بيض',
-    description: '',
+    description: 'برجر جامبو مع بيض',
     category: 'grill',
     price: 85,
     popular: false,
@@ -1091,7 +1091,7 @@ export const menu = [
   {
     id: 'gr-012',
     name: 'برجر جامبو جبنة',
-    description: '',
+    description: 'برجر جامبو بجبنة سايحة',
     category: 'grill',
     price: 85,
     popular: false,
@@ -1102,7 +1102,7 @@ export const menu = [
   {
     id: 'gr-013',
     name: 'برجر جامبو مكس',
-    description: '',
+    description: 'برجر جامبو ببيض وجبنة',
     category: 'grill',
     price: 95,
     popular: false,
@@ -1113,7 +1113,7 @@ export const menu = [
   {
     id: 'gr-014',
     name: 'برجر مكس جبن',
-    description: '',
+    description: 'برجر بخليط أجبان',
     category: 'grill',
     price: 110,
     popular: false,
@@ -1124,7 +1124,7 @@ export const menu = [
   {
     id: 'gr-015',
     name: 'برجر جامبو بالمشروم',
-    description: 'جديد',
+    description: 'جديد — برجر جامبو بصوص المشروم',
     category: 'grill',
     price: 150,
     popular: false,
@@ -1135,7 +1135,7 @@ export const menu = [
   {
     id: 'gr-016',
     name: 'برجر جامبو موزريلا ستيكس',
-    description: 'جديد',
+    description: 'جديد — برجر جامبو مع أصابع موزاريلا',
     category: 'grill',
     price: 155,
     popular: false,
@@ -1146,7 +1146,7 @@ export const menu = [
   {
     id: 'gr-017',
     name: 'شيش طاووق',
-    description: '',
+    description: 'قطع فراخ متبلة مشوية',
     category: 'grill',
     price: 65,
     popular: false,
@@ -1157,7 +1157,7 @@ export const menu = [
   {
     id: 'gr-018',
     name: 'بانيه',
-    description: '',
+    description: 'شرايح فراخ مقرمشة',
     category: 'grill',
     price: 50,
     popular: false,
@@ -1168,7 +1168,7 @@ export const menu = [
   {
     id: 'gr-019',
     name: 'شاورما فراخ',
-    description: '',
+    description: 'شاورما فراخ بالصوص الأبيض',
     category: 'grill',
     price: 60,
     popular: false,
@@ -1179,7 +1179,7 @@ export const menu = [
   {
     id: 'gr-020',
     name: 'زنجر',
-    description: '',
+    description: 'فراخ مقرمشة حارة',
     category: 'grill',
     price: 60,
     popular: false,
@@ -1190,7 +1190,7 @@ export const menu = [
   {
     id: 'gr-021',
     name: 'مايتي زنجر',
-    description: 'جديد',
+    description: 'جديد — زنجر بحجم مضاعف',
     category: 'grill',
     price: 160,
     popular: true,
@@ -1201,7 +1201,7 @@ export const menu = [
   {
     id: 'gr-022',
     name: 'سوبر كرانشي',
-    description: 'جديد',
+    description: 'جديد — فراخ بقرمشة مضاعفة',
     category: 'grill',
     price: 90,
     popular: false,
@@ -1212,7 +1212,7 @@ export const menu = [
   {
     id: 'gr-023',
     name: 'فاهيتا فراخ',
-    description: '',
+    description: 'فراخ بالفلفل الملون والبصل',
     category: 'grill',
     price: 75,
     popular: false,
@@ -1223,7 +1223,7 @@ export const menu = [
   {
     id: 'gr-024',
     name: 'فاهيتا بارميزان',
-    description: '',
+    description: 'فاهيتا فراخ بصوص البارميزان',
     category: 'grill',
     price: 100,
     popular: false,
@@ -1245,7 +1245,7 @@ export const menu = [
   {
     id: 'gr-026',
     name: 'تشيز كرسبي',
-    description: '',
+    description: 'فراخ كرسبي بالجبنة السايحة',
     category: 'grill',
     price: 80,
     popular: false,
@@ -1256,7 +1256,7 @@ export const menu = [
   {
     id: 'gr-027',
     name: 'ساندوتش بيتزا',
-    description: '',
+    description: 'حشو البيتزا في رغيف سخن',
     category: 'grill',
     price: 50,
     popular: false,
@@ -1267,7 +1267,7 @@ export const menu = [
   {
     id: 'gr-028',
     name: 'بيض بالبسطرمة',
-    description: '',
+    description: 'بيض متقلب مع بسطرمة',
     category: 'grill',
     price: 30,
     popular: false,
@@ -1278,7 +1278,7 @@ export const menu = [
   {
     id: 'gr-029',
     name: 'بيض بالبسطرمة بالجبنة مقلية',
-    description: '',
+    description: 'بيض وبسطرمة مع جبنة مقلية',
     category: 'grill',
     price: 60,
     popular: false,
@@ -1289,7 +1289,7 @@ export const menu = [
   {
     id: 'gr-030',
     name: 'جبنة مقلية',
-    description: '',
+    description: 'جبنة مقلية سايحة',
     category: 'grill',
     price: 35,
     popular: false,
@@ -1300,7 +1300,7 @@ export const menu = [
   {
     id: 'gr-031',
     name: 'بطاطس',
-    description: '',
+    description: 'بطاطس محمرة سخنة',
     category: 'grill',
     price: 20,
     popular: false,
@@ -1311,7 +1311,7 @@ export const menu = [
   {
     id: 'gr-032',
     name: 'بطاطس جبنة',
-    description: '',
+    description: 'بطاطس محمرة بجبنة سايحة',
     category: 'grill',
     price: 40,
     popular: false,
@@ -1326,7 +1326,7 @@ export const menu = [
   {
     id: 'cr-001',
     name: 'كريب شاورما فراخ',
-    description: '',
+    description: 'كريب سخن محشي شاورما فراخ',
     category: 'crepe',
     price: 85,
     popular: false,
@@ -1337,7 +1337,7 @@ export const menu = [
   {
     id: 'cr-002',
     name: 'كريب شيش طاووق',
-    description: '',
+    description: 'كريب سخن محشي شيش طاووق',
     category: 'crepe',
     price: 85,
     popular: false,
@@ -1348,7 +1348,7 @@ export const menu = [
   {
     id: 'cr-003',
     name: 'كريب بانيه',
-    description: '',
+    description: 'كريب سخن محشي بانيه مقرمش',
     category: 'crepe',
     price: 85,
     popular: false,
@@ -1359,7 +1359,7 @@ export const menu = [
   {
     id: 'cr-004',
     name: 'كريب كريسبي',
-    description: '',
+    description: 'كريب سخن محشي فراخ كريسبي',
     category: 'crepe',
     price: 85,
     popular: false,
@@ -1370,7 +1370,7 @@ export const menu = [
   {
     id: 'cr-005',
     name: 'كريب كبدة اسكندراني',
-    description: '',
+    description: 'كريب سخن محشي كبدة اسكندراني',
     category: 'crepe',
     price: 65,
     popular: false,
@@ -1381,7 +1381,7 @@ export const menu = [
   {
     id: 'cr-006',
     name: 'كريب سجق اسكندراني',
-    description: '',
+    description: 'كريب سخن محشي سجق اسكندراني',
     category: 'crepe',
     price: 65,
     popular: false,
@@ -1392,7 +1392,7 @@ export const menu = [
   {
     id: 'cr-007',
     name: 'كريب برجر جامبو',
-    description: '',
+    description: 'كريب سخن محشي برجر جامبو',
     category: 'crepe',
     price: 90,
     popular: false,
@@ -1403,7 +1403,7 @@ export const menu = [
   {
     id: 'cr-008',
     name: 'كريب هوت دوج مكسيكانو',
-    description: '',
+    description: 'كريب بهوت دوج وصوص مكسيكي',
     category: 'crepe',
     price: 90,
     popular: false,
@@ -1414,7 +1414,7 @@ export const menu = [
   {
     id: 'cr-009',
     name: 'كريب مكس جبن',
-    description: '',
+    description: 'كريب بخليط أجبان سايحة',
     category: 'crepe',
     price: 70,
     popular: false,
@@ -1425,7 +1425,7 @@ export const menu = [
   {
     id: 'cr-010',
     name: 'كريب بطاطس',
-    description: '',
+    description: 'كريب محشي بطاطس محمرة',
     category: 'crepe',
     price: 60,
     popular: false,
@@ -1436,7 +1436,7 @@ export const menu = [
   {
     id: 'cr-011',
     name: 'كريب فاهيتا فراخ',
-    description: '',
+    description: 'كريب بفاهيتا الفراخ والفلفل',
     category: 'crepe',
     price: 110,
     popular: false,
@@ -1447,7 +1447,7 @@ export const menu = [
   {
     id: 'cr-012',
     name: 'كريب مكس فراخ',
-    description: '',
+    description: 'كريب بخليط الفراخ المشوية',
     category: 'crepe',
     price: 130,
     popular: false,
@@ -1458,7 +1458,7 @@ export const menu = [
   {
     id: 'cr-013',
     name: 'كريب سوبر كرانشي',
-    description: '',
+    description: 'كريب بفراخ مقرمشة',
     category: 'crepe',
     price: 110,
     popular: false,
@@ -1480,7 +1480,7 @@ export const menu = [
   {
     id: 'cr-015',
     name: 'كريب كفتة',
-    description: '',
+    description: 'كريب سخن محشي كفتة مشوية',
     category: 'crepe',
     price: 80,
     popular: false,
@@ -1491,7 +1491,7 @@ export const menu = [
   {
     id: 'cr-016',
     name: 'كريب زنجر ع سوسيس',
-    description: '',
+    description: 'كريب بالزنجر والسوسيس',
     category: 'crepe',
     price: 100,
     popular: false,
@@ -1502,7 +1502,7 @@ export const menu = [
   {
     id: 'cr-017',
     name: 'كريب بسطرمة',
-    description: '',
+    description: 'كريب سخن محشي بسطرمة',
     category: 'crepe',
     price: 70,
     popular: false,
@@ -1513,7 +1513,7 @@ export const menu = [
   {
     id: 'cr-018',
     name: 'كريب شوكولاتة',
-    description: '',
+    description: 'كريب حلو بالشوكولاتة',
     category: 'crepe',
     price: 40,
     popular: false,
@@ -1528,7 +1528,7 @@ export const menu = [
   {
     id: 'hw-001',
     name: 'حواوشي لحم',
-    description: '',
+    description: 'لحمة مفرومة متبلة ومخبوزة في العيش',
     category: 'hawawshi',
     price: 75,
     popular: true,
@@ -1539,7 +1539,7 @@ export const menu = [
   {
     id: 'hw-002',
     name: 'حواوشي بالموتزاريلا',
-    description: '',
+    description: 'حواوشي بجبنة موتزاريلا سايحة',
     category: 'hawawshi',
     price: 100,
     popular: false,
@@ -1550,7 +1550,7 @@ export const menu = [
   {
     id: 'hw-003',
     name: 'حواوشي بالبسطرمة',
-    description: '',
+    description: 'حواوشي بشرايح البسطرمة',
     category: 'hawawshi',
     price: 100,
     popular: false,
@@ -1561,7 +1561,7 @@ export const menu = [
   {
     id: 'hw-004',
     name: 'حواوشي بالسطرمة و الجبنة',
-    description: '',
+    description: 'حواوشي ببسطرمة وجبنة سايحة',
     category: 'hawawshi',
     price: 120,
     popular: false,
@@ -1572,7 +1572,7 @@ export const menu = [
   {
     id: 'hw-005',
     name: 'حواوشي بسطرمة كيري',
-    description: '',
+    description: 'حواوشي ببسطرمة وجبنة كيري',
     category: 'hawawshi',
     price: 130,
     popular: false,
@@ -1583,7 +1583,7 @@ export const menu = [
   {
     id: 'hw-006',
     name: 'حواوشي بالسجق',
-    description: '',
+    description: 'حواوشي بالسجق المتبل',
     category: 'hawawshi',
     price: 110,
     popular: false,
@@ -1594,7 +1594,7 @@ export const menu = [
   {
     id: 'hw-007',
     name: 'حواوشي سجق كيري',
-    description: '',
+    description: 'حواوشي بسجق وجبنة كيري',
     category: 'hawawshi',
     price: 140,
     popular: false,
@@ -1605,7 +1605,7 @@ export const menu = [
   {
     id: 'hw-008',
     name: 'حواوشي تركي مكس جبن',
-    description: '',
+    description: 'حواوشي تركي بخليط أجبان',
     category: 'hawawshi',
     price: 130,
     popular: false,
@@ -1620,7 +1620,7 @@ export const menu = [
   {
     id: 'bx-001',
     name: 'علبة فول سادة',
-    description: '',
+    description: 'فول مدمس سادة',
     category: 'boxes',
     price: 10,
     popular: true,
@@ -1631,7 +1631,7 @@ export const menu = [
   {
     id: 'bx-002',
     name: 'علبة فول محوج',
-    description: '',
+    description: 'فول متبل بخلطة توابل حارة',
     category: 'boxes',
     price: 20,
     popular: false,
@@ -1642,7 +1642,7 @@ export const menu = [
   {
     id: 'bx-003',
     name: 'علبة فول زيت زيتون',
-    description: '',
+    description: 'فول بزيت الزيتون والليمون',
     category: 'boxes',
     price: 25,
     popular: false,
@@ -1653,7 +1653,7 @@ export const menu = [
   {
     id: 'bx-004',
     name: 'علبة فول سمنة',
-    description: '',
+    description: 'فول متقلب بالسمنة البلدي',
     category: 'boxes',
     price: 25,
     popular: false,
@@ -1664,7 +1664,7 @@ export const menu = [
   {
     id: 'bx-005',
     name: 'علبة فول سجق',
-    description: '',
+    description: 'فول مع سجق مقلي',
     category: 'boxes',
     price: 30,
     popular: false,
@@ -1675,7 +1675,7 @@ export const menu = [
   {
     id: 'bx-006',
     name: 'علبة فول لبناني',
-    description: '',
+    description: 'فول بالطحينة والليمون',
     category: 'boxes',
     price: 25,
     popular: false,
@@ -1686,7 +1686,7 @@ export const menu = [
   {
     id: 'bx-007',
     name: 'علبة فول اسكندراني',
-    description: '',
+    description: 'فول بالطماطم والفلفل والكزبرة',
     category: 'boxes',
     price: 25,
     popular: false,
@@ -1697,7 +1697,7 @@ export const menu = [
   {
     id: 'bx-008',
     name: 'علبة عجينة',
-    description: '',
+    description: 'عجينة الطعمية نية — تقليها في البيت',
     category: 'boxes',
     price: 15,
     popular: false,
@@ -1708,7 +1708,7 @@ export const menu = [
   {
     id: 'bx-009',
     name: 'علبة شكشكوكة',
-    description: '',
+    description: 'بيض في صلصة طماطم وفلفل',
     category: 'boxes',
     price: 10,
     popular: false,
@@ -1719,7 +1719,7 @@ export const menu = [
   {
     id: 'bx-010',
     name: 'علبة باباغنوج',
-    description: '',
+    description: 'باذنجان مشوي بالطحينة',
     category: 'boxes',
     price: 10,
     popular: false,
@@ -1730,7 +1730,7 @@ export const menu = [
   {
     id: 'bx-011',
     name: 'علبة مش',
-    description: '',
+    description: 'مش بلدي مخمّر',
     category: 'boxes',
     price: 10,
     popular: false,
@@ -1741,7 +1741,7 @@ export const menu = [
   {
     id: 'bx-012',
     name: 'علبة مسقعة',
-    description: '',
+    description: 'باذنجان مقلي في صلصة طماطم',
     category: 'boxes',
     price: 10,
     popular: false,
@@ -1752,7 +1752,7 @@ export const menu = [
   {
     id: 'bx-013',
     name: 'علبة بوريه',
-    description: '',
+    description: 'بطاطس مهروسة ناعمة',
     category: 'boxes',
     price: 10,
     popular: false,
@@ -1763,7 +1763,7 @@ export const menu = [
   {
     id: 'bx-014',
     name: 'علبة بوريه زيت زيتون',
-    description: '',
+    description: 'بوريه بزيت الزيتون',
     category: 'boxes',
     price: 20,
     popular: false,
@@ -1774,7 +1774,7 @@ export const menu = [
   {
     id: 'bx-015',
     name: 'علبة جبنة بيضاء',
-    description: '',
+    description: 'جبنة بيضاء طرية',
     category: 'boxes',
     price: 10,
     popular: false,
@@ -1785,7 +1785,7 @@ export const menu = [
   {
     id: 'bx-016',
     name: 'علبة جبنة بيضاء زيت زيتون',
-    description: '',
+    description: 'جبنة بيضاء بزيت الزيتون',
     category: 'boxes',
     price: 20,
     popular: false,
@@ -1796,7 +1796,7 @@ export const menu = [
   {
     id: 'bx-017',
     name: 'علبة بطاطس متبلة',
-    description: '',
+    description: 'بطاطس مسلوقة بالتوابل',
     category: 'boxes',
     price: 10,
     popular: false,
@@ -1807,7 +1807,7 @@ export const menu = [
   {
     id: 'bx-018',
     name: 'طلب بطاطس',
-    description: '',
+    description: 'بطاطس محمرة سخنة',
     category: 'boxes',
     price: 30,
     popular: false,
@@ -1818,7 +1818,7 @@ export const menu = [
   {
     id: 'bx-019',
     name: 'علبة مخلل',
-    description: '',
+    description: 'مخلل بلدي مشكل',
     category: 'boxes',
     price: 6,
     popular: false,
@@ -1829,7 +1829,7 @@ export const menu = [
   {
     id: 'bx-020',
     name: 'علبة باذنجان مخلل',
-    description: '',
+    description: 'باذنجان مخلل محشي',
     category: 'boxes',
     price: 10,
     popular: false,
@@ -1840,7 +1840,7 @@ export const menu = [
   {
     id: 'bx-021',
     name: 'علبة خيار',
-    description: '',
+    description: 'خيار مخلل',
     category: 'boxes',
     price: 10,
     popular: false,
@@ -1851,7 +1851,7 @@ export const menu = [
   {
     id: 'bx-022',
     name: 'علبة سلطة',
-    description: '',
+    description: 'سلطة خضار طازة مقطعة',
     category: 'boxes',
     price: 15,
     popular: false,
@@ -1867,7 +1867,7 @@ export const menu = [
   {
     id: 'pl-001',
     name: 'طلب فول ذرة',
-    description: 'يشمل قرص وسلطة و٢ رغيف عيش',
+    description: 'فول بزيت الذرة — يشمل قرص وسلطة و٢ رغيف عيش',
     category: 'platters',
     price: 50,
     popular: true,
@@ -1878,7 +1878,7 @@ export const menu = [
   {
     id: 'pl-002',
     name: 'طلب فول حار',
-    description: 'يشمل قرص وسلطة و٢ رغيف عيش',
+    description: 'فول متقلب بالشطة — يشمل قرص وسلطة و٢ رغيف عيش',
     category: 'platters',
     price: 50,
     popular: false,
@@ -1889,7 +1889,7 @@ export const menu = [
   {
     id: 'pl-003',
     name: 'طلب فول زيت زيتون',
-    description: 'يشمل قرص وسلطة و٢ رغيف عيش',
+    description: 'فول بزيت الزيتون والليمون — يشمل قرص وسلطة و٢ رغيف عيش',
     category: 'platters',
     price: 60,
     popular: false,
@@ -1900,7 +1900,7 @@ export const menu = [
   {
     id: 'pl-004',
     name: 'طلب فول سمنة بلدي',
-    description: 'يشمل قرص وسلطة و٢ رغيف عيش',
+    description: 'فول متقلب بالسمنة البلدي — يشمل قرص وسلطة و٢ رغيف عيش',
     category: 'platters',
     price: 60,
     popular: false,
@@ -1911,7 +1911,7 @@ export const menu = [
   {
     id: 'pl-005',
     name: 'طلب فول اسكندراني',
-    description: 'يشمل قرص وسلطة و٢ رغيف عيش',
+    description: 'فول بالطماطم والفلفل والكزبرة — يشمل قرص وسلطة و٢ رغيف عيش',
     category: 'platters',
     price: 55,
     popular: false,
@@ -1922,7 +1922,7 @@ export const menu = [
   {
     id: 'pl-006',
     name: 'طلب فول لبناني',
-    description: 'يشمل قرص وسلطة و٢ رغيف عيش',
+    description: 'فول بالطحينة والليمون — يشمل قرص وسلطة و٢ رغيف عيش',
     category: 'platters',
     price: 55,
     popular: false,
@@ -1933,7 +1933,7 @@ export const menu = [
   {
     id: 'pl-007',
     name: 'طلب فول سجق',
-    description: 'يشمل قرص وسلطة و٢ رغيف عيش',
+    description: 'فول مع سجق مقلي — يشمل قرص وسلطة و٢ رغيف عيش',
     category: 'platters',
     price: 70,
     popular: false,
@@ -1944,7 +1944,7 @@ export const menu = [
   {
     id: 'pl-008',
     name: 'طلب فول بسطرمة',
-    description: 'يشمل قرص وسلطة و٢ رغيف عيش',
+    description: 'فول مع شرايح بسطرمة — يشمل قرص وسلطة و٢ رغيف عيش',
     category: 'platters',
     price: 65,
     popular: false,
@@ -1955,7 +1955,7 @@ export const menu = [
   {
     id: 'pl-009',
     name: 'طلب فول المدلع',
-    description: 'جديد — يشمل قرص وسلطة و٢ رغيف عيش',
+    description: 'فول بخلطة بشندي السرية والشبت — يشمل قرص وسلطة و٢ رغيف عيش',
     category: 'platters',
     price: 60,
     popular: false,
@@ -1970,7 +1970,7 @@ export const menu = [
   {
     id: 'eg-001',
     name: 'طلب اومليت سادة',
-    description: '',
+    description: 'بيض مخفوق مقلي',
     category: 'eggs',
     price: 30,
     popular: false,
@@ -1981,7 +1981,7 @@ export const menu = [
   {
     id: 'eg-002',
     name: 'طلب اومليت سمنة',
-    description: '',
+    description: 'أومليت متقلي في سمنة بلدي',
     category: 'eggs',
     price: 40,
     popular: false,
@@ -1992,7 +1992,7 @@ export const menu = [
   {
     id: 'eg-003',
     name: 'طلب اومليت بسطرمة',
-    description: '',
+    description: 'أومليت مع شرايح بسطرمة',
     category: 'eggs',
     price: 50,
     popular: false,
@@ -2003,7 +2003,7 @@ export const menu = [
   {
     id: 'eg-004',
     name: 'طلب اومليت شيدر او رومي',
-    description: '',
+    description: 'أومليت بجبنة شيدر أو رومي',
     category: 'eggs',
     price: 50,
     popular: false,
@@ -2024,7 +2024,7 @@ export const menu = [
   {
     id: 'eg-005',
     name: 'طلب اومليت مكس جبن',
-    description: '',
+    description: 'أومليت بخليط أجبان',
     category: 'eggs',
     price: 60,
     popular: false,
@@ -2035,7 +2035,7 @@ export const menu = [
   {
     id: 'eg-006',
     name: 'طلب اومليت سبانش',
-    description: '',
+    description: 'أومليت بالخضار على الطريقة الإسبانية',
     category: 'eggs',
     price: 40,
     popular: false,
@@ -2078,7 +2078,7 @@ export const menu = [
   {
     id: 'eg-009',
     name: 'طلب بيضة مدحرجة',
-    description: '',
+    description: 'بيضة مسلوقة متغطية ومقلية',
     category: 'eggs',
     price: 15,
     popular: false,
@@ -2093,7 +2093,7 @@ export const menu = [
   {
     id: 'pp-001',
     name: 'طلب بطاطس بالتوابل',
-    description: '',
+    description: 'بطاطس محمرة بخلطة التوابل',
     category: 'potato-plates',
     price: 30,
     popular: false,
@@ -2104,7 +2104,7 @@ export const menu = [
   {
     id: 'pp-002',
     name: 'طلب بطاطس شيدر او رومي',
-    description: '',
+    description: 'بطاطس محمرة بجبنة شيدر أو رومي',
     category: 'potato-plates',
     price: 50,
     popular: false,
@@ -2125,7 +2125,7 @@ export const menu = [
   {
     id: 'pp-003',
     name: 'طلب بطاطس مكس جبن',
-    description: '',
+    description: 'بطاطس محمرة بخليط أجبان',
     category: 'potato-plates',
     price: 60,
     popular: false,
@@ -2136,7 +2136,7 @@ export const menu = [
   {
     id: 'pp-004',
     name: 'طلب جبنة مقلية',
-    description: '',
+    description: 'شرايح جبنة مقلية سايحة',
     category: 'potato-plates',
     price: 70,
     popular: false,
@@ -2151,7 +2151,7 @@ export const menu = [
   {
     id: 'fp-001',
     name: 'قرص سمسم',
-    description: '',
+    description: 'قرص طعمية مغطى بالسمسم',
     category: 'falafel-pieces',
     price: 6,
     popular: false,
@@ -2162,7 +2162,7 @@ export const menu = [
   {
     id: 'fp-002',
     name: 'قرص محشية',
-    description: '',
+    description: 'قرص طعمية محشي من جوّه',
     category: 'falafel-pieces',
     price: 6,
     popular: false,
@@ -2173,7 +2173,7 @@ export const menu = [
   {
     id: 'fp-003',
     name: 'قرص فلافل صغير',
-    description: '',
+    description: 'قرص طعمية صغير',
     category: 'falafel-pieces',
     price: 3,
     popular: false,
@@ -2206,7 +2206,7 @@ export const menu = [
   {
     id: 'fp-006',
     name: 'قرص فلافل محشية سمسم',
-    description: '',
+    description: 'قرص طعمية محشي ومغطى بالسمسم',
     category: 'falafel-pieces',
     price: 8,
     popular: false,
@@ -2217,7 +2217,7 @@ export const menu = [
   {
     id: 'fp-007',
     name: 'قرص فلافل بسطرمة',
-    description: '',
+    description: 'قرص طعمية محشي بسطرمة',
     category: 'falafel-pieces',
     price: 15,
     popular: false,
@@ -2228,7 +2228,7 @@ export const menu = [
   {
     id: 'fp-008',
     name: 'قرص جبنه كيري',
-    description: '',
+    description: 'قرص محشي جبنة كيري',
     category: 'falafel-pieces',
     price: 15,
     popular: false,
@@ -2239,7 +2239,7 @@ export const menu = [
   {
     id: 'fp-009',
     name: 'قرص فلافل كيري',
-    description: '',
+    description: 'قرص طعمية محشي جبنة كيري',
     category: 'falafel-pieces',
     price: 15,
     popular: false,
@@ -2250,7 +2250,7 @@ export const menu = [
   {
     id: 'fp-010',
     name: 'قرص فلافل شيدر',
-    description: '',
+    description: 'قرص طعمية محشي جبنة شيدر',
     category: 'falafel-pieces',
     price: 15,
     popular: false,
@@ -2261,7 +2261,7 @@ export const menu = [
   {
     id: 'fp-011',
     name: 'قرص فلافل بسطرمة كيري',
-    description: '',
+    description: 'قرص طعمية ببسطرمة وجبنة كيري',
     category: 'falafel-pieces',
     price: 20,
     popular: false,
@@ -2272,7 +2272,7 @@ export const menu = [
   {
     id: 'fp-012',
     name: 'قرص عجة بلدي',
-    description: '',
+    description: 'قرص بيض مخفوق بالبقدونس والبصل',
     category: 'falafel-pieces',
     price: 25,
     popular: false,
@@ -2283,7 +2283,7 @@ export const menu = [
   {
     id: 'fp-013',
     name: 'قرص عجة بلدي دوبل',
-    description: '',
+    description: 'قرص عجة بسمك مضاعف',
     category: 'falafel-pieces',
     price: 35,
     popular: false,
@@ -2294,7 +2294,7 @@ export const menu = [
   {
     id: 'fp-014',
     name: 'قرص عجة بلدي بالسطرمه',
-    description: '',
+    description: 'قرص عجة بشرايح البسطرمة',
     category: 'falafel-pieces',
     price: 35,
     popular: false,
@@ -2305,7 +2305,7 @@ export const menu = [
   {
     id: 'fp-015',
     name: 'قرص عجة بسطرمة رومي',
-    description: '',
+    description: 'قرص عجة ببسطرمة وجبنة رومي',
     category: 'falafel-pieces',
     price: 45,
     popular: false,
@@ -2316,7 +2316,7 @@ export const menu = [
   {
     id: 'fp-016',
     name: 'بيضة مسلوقة',
-    description: '',
+    description: 'بيضة مسلوقة',
     category: 'falafel-pieces',
     price: 8,
     popular: false,
@@ -2331,7 +2331,7 @@ export const menu = [
   {
     id: 'sl-001',
     name: 'طلب سلطة',
-    description: '',
+    description: 'سلطة خضار طازة مقطعة',
     category: 'salads',
     price: 15,
     popular: false,
@@ -2342,7 +2342,7 @@ export const menu = [
   {
     id: 'sl-002',
     name: 'طلب طحينة',
-    description: '',
+    description: 'طحينة سايحة بالليمون',
     category: 'salads',
     price: 15,
     popular: false,
@@ -2353,7 +2353,7 @@ export const menu = [
   {
     id: 'sl-003',
     name: 'طلب بابا غنوج',
-    description: '',
+    description: 'باذنجان مشوي بالطحينة',
     category: 'salads',
     price: 20,
     popular: false,
@@ -2364,7 +2364,7 @@ export const menu = [
   {
     id: 'sl-004',
     name: 'طلب جبنة بيضاء',
-    description: '',
+    description: 'جبنة بيضاء طرية',
     category: 'salads',
     price: 25,
     popular: false,
@@ -2375,7 +2375,7 @@ export const menu = [
   {
     id: 'sl-005',
     name: 'طلب مش',
-    description: '',
+    description: 'مش بلدي مخمّر',
     category: 'salads',
     price: 20,
     popular: false,
@@ -2386,7 +2386,7 @@ export const menu = [
   {
     id: 'sl-006',
     name: 'طلب باذنجان',
-    description: '',
+    description: 'شرايح باذنجان مقلية',
     category: 'salads',
     price: 10,
     popular: false,
@@ -2397,7 +2397,7 @@ export const menu = [
   {
     id: 'sl-007',
     name: 'طلب خيار متبل',
-    description: '',
+    description: 'خيار بالخل والملح',
     category: 'salads',
     price: 10,
     popular: false,
@@ -2408,7 +2408,7 @@ export const menu = [
   {
     id: 'sl-008',
     name: 'طلب طرنشات طماطم',
-    description: '',
+    description: 'شرايح طماطم طازة',
     category: 'salads',
     price: 15,
     popular: false,
@@ -2419,7 +2419,7 @@ export const menu = [
   {
     id: 'sl-009',
     name: 'طلب ثومية',
-    description: '',
+    description: 'صوص ثوم كريمي',
     category: 'salads',
     price: 20,
     popular: false,
@@ -2430,7 +2430,7 @@ export const menu = [
   {
     id: 'sl-010',
     name: 'بطاطس متبلة',
-    description: '',
+    description: 'بطاطس مسلوقة بالتوابل',
     category: 'salads',
     price: 15,
     popular: false,
@@ -2441,7 +2441,7 @@ export const menu = [
   {
     id: 'sl-011',
     name: 'مخلل',
-    description: '',
+    description: 'مخلل بلدي مشكل',
     category: 'salads',
     price: 7,
     popular: false,
@@ -2452,7 +2452,7 @@ export const menu = [
   {
     id: 'sl-012',
     name: 'زجاجه مياه',
-    description: '',
+    description: 'مياه معدنية',
     category: 'salads',
     price: 10,
     popular: false,
@@ -2467,7 +2467,7 @@ export const menu = [
   {
     id: 'ms-001',
     name: 'طلب بوريه',
-    description: '',
+    description: 'بطاطس مهروسة ناعمة',
     category: 'misc',
     price: 20,
     popular: false,
@@ -2478,7 +2478,7 @@ export const menu = [
   {
     id: 'ms-002',
     name: 'طلب مسقعة',
-    description: '',
+    description: 'باذنجان مقلي في صلصة طماطم',
     category: 'misc',
     price: 20,
     popular: false,
@@ -2489,7 +2489,7 @@ export const menu = [
   {
     id: 'ms-003',
     name: 'طلب شكشوكة',
-    description: '',
+    description: 'بيض في صلصة طماطم وفلفل',
     category: 'misc',
     price: 20,
     popular: false,
@@ -2500,7 +2500,7 @@ export const menu = [
   {
     id: 'ms-004',
     name: 'طلب عدس ساده',
-    description: '',
+    description: 'شوربة عدس سخنة',
     category: 'misc',
     price: 30,
     popular: false,
@@ -2511,7 +2511,7 @@ export const menu = [
   {
     id: 'ms-005',
     name: 'طلب عدس سمنة',
-    description: '',
+    description: 'شوربة عدس بالسمنة البلدي',
     category: 'misc',
     price: 40,
     popular: false,
@@ -2526,7 +2526,7 @@ export const menu = [
   {
     id: 'ex-001',
     name: 'اضافة شيدر',
-    description: '',
+    description: 'شريحة جبنة شيدر',
     category: 'extras',
     price: 15,
     popular: false,
@@ -2537,7 +2537,7 @@ export const menu = [
   {
     id: 'ex-002',
     name: 'اضافة موزاريلا',
-    description: '',
+    description: 'جبنة موتزاريلا سايحة',
     category: 'extras',
     price: 15,
     popular: false,
@@ -2548,7 +2548,7 @@ export const menu = [
   {
     id: 'ex-003',
     name: 'اضافة رومي',
-    description: '',
+    description: 'شريحة جبنة رومي',
     category: 'extras',
     price: 15,
     popular: false,
@@ -2559,7 +2559,7 @@ export const menu = [
   {
     id: 'ex-004',
     name: 'اضافة بطاطس',
-    description: '',
+    description: 'بطاطس محمرة زيادة',
     category: 'extras',
     price: 15,
     popular: false,
@@ -2570,7 +2570,7 @@ export const menu = [
   {
     id: 'ex-005',
     name: 'اضافة قطعه برجر',
-    description: '',
+    description: 'قطعة برجر زيادة',
     category: 'extras',
     price: 50,
     popular: false,
@@ -2581,7 +2581,7 @@ export const menu = [
   {
     id: 'ex-006',
     name: 'اضافة بسطرمة',
-    description: '',
+    description: 'شرايح بسطرمة زيادة',
     category: 'extras',
     price: 20,
     popular: false,
