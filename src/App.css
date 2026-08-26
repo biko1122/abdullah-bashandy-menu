@@ -1,0 +1,11 @@
+/* ستايل هيكل الصفحة. باقي التصميم كله في src/styles/global.css */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.app > #main {
+  flex: 1;
+}

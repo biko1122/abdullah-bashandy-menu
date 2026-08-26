@@ -1,0 +1,101 @@
+.catnav {
+  position: relative;
+}
+
+.catnav__list {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  padding-block: 0.55rem;
+  margin: 0;
+}
+
+.catnav__list::-webkit-scrollbar {
+  display: none;
+}
+
+.catnav__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  scroll-snap-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text-soft);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: background var(--fast) var(--ease), color var(--fast) var(--ease),
+    border-color var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+
+.catnav__chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.catnav__chip.is-active {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--on-dark);
+}
+
+.catnav__count {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--surface-2);
+  border-radius: var(--radius-pill);
+  padding: 0.02rem 0.4rem;
+}
+
+.catnav__chip.is-active .catnav__count {
+  background: rgba(247, 239, 225, 0.16);
+  color: var(--accent-soft);
+}
+
+/* تدرّج على أطراف الشريط عشان يبان إن فيه كمان */
+.catnav__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* في RTL: البداية = يمين الشاشة، والنهاية = شمالها */
+.catnav__fade--start {
+  inset-inline-start: 0;
+  background: linear-gradient(to left, var(--background), transparent);
+}
+
+.catnav__fade--end {
+  inset-inline-end: 0;
+  background: linear-gradient(to right, var(--background), transparent);
+}
+
+[dir='ltr'] .catnav__fade--start {
+  background: linear-gradient(to right, var(--background), transparent);
+}
+
+[dir='ltr'] .catnav__fade--end {
+  background: linear-gradient(to left, var(--background), transparent);
+}
+
+@media (min-width: 900px) {
+  .catnav__fade {
+    display: none;
+  }
+
+  .catnav__list {
+    flex-wrap: wrap;
+  }
+}

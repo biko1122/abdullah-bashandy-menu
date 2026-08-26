@@ -1,0 +1,207 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--background) 86%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: background var(--normal) var(--ease), border-color var(--normal) var(--ease),
+    box-shadow var(--normal) var(--ease);
+}
+
+.nav.is-scrolled {
+  background: color-mix(in srgb, var(--background) 94%, transparent);
+  border-bottom-color: var(--border);
+  box-shadow: 0 6px 20px rgba(35, 22, 10, 0.06);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 68px;
+  padding-block: 0.6rem;
+  transition: min-height var(--normal) var(--ease);
+}
+
+.nav.is-scrolled .nav__inner {
+  min-height: 60px;
+}
+
+/* ------------------------------ الشعار ------------------------------ */
+
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.nav__mark {
+  color: var(--primary);
+  flex: none;
+  transition: transform var(--normal) var(--ease);
+}
+
+.nav__brand:hover .nav__mark {
+  transform: rotate(-4deg) scale(1.05);
+}
+
+.nav__names {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  min-width: 0;
+}
+
+.nav__name {
+  font-family: var(--font-display);
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.nav__latin {
+  font-family: var(--font-body);
+  font-size: 0.58rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--muted);
+  direction: ltr;
+  text-align: start;
+}
+
+/* ------------------------------ الروابط ------------------------------ */
+
+.nav__links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.nav__link {
+  position: relative;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  transition: color var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+
+.nav__link:hover {
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 7%, transparent);
+}
+
+.nav__link.active {
+  color: var(--text);
+}
+
+.nav__link.active::after {
+  content: '';
+  position: absolute;
+  inset-block-end: 0.15rem;
+  inset-inline: 0.85rem;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--primary);
+}
+
+/* --------------------------- زرار الاختيارات --------------------------- */
+
+.nav__selection {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.35rem 0.45rem 0.35rem 1rem;
+  border-radius: var(--radius-pill);
+  background: var(--charcoal);
+  color: var(--on-dark);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+
+.nav__selection:hover {
+  background: #2c2116;
+  transform: translateY(-1px);
+}
+
+.nav__selection.is-empty {
+  background: transparent;
+  color: var(--text-soft);
+  border: 1px solid var(--border-strong);
+  padding-inline: 1rem;
+}
+
+.nav__selection.is-empty:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.nav__selection-count {
+  display: grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding-inline: 0.3rem;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  color: #fff7ea;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.nav__selection-total {
+  background: rgba(230, 192, 120, 0.14);
+  color: var(--accent-soft);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.7rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* ------------------------------ المقاسات ------------------------------ */
+
+@media (min-width: 900px) {
+  .nav__selection {
+    display: inline-flex;
+  }
+
+  .nav__links {
+    gap: 0.25rem;
+  }
+}
+
+/* على الموبايل: الشعار + رابطين بس، و"اختياراتك" بيبقى شريط عايم تحت */
+@media (max-width: 899px) {
+  .nav__inner {
+    gap: 0.5rem;
+  }
+
+  .nav__link {
+    padding: 0.4rem 0.55rem;
+    font-size: 0.9rem;
+  }
+
+  .nav__link--muted {
+    display: none;
+  }
+
+  .nav__link.active::after {
+    inset-inline: 0.55rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav__latin {
+    display: none;
+  }
+}

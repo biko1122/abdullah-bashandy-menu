@@ -1,0 +1,31 @@
+.quicknav {
+  padding-block: clamp(1rem, 3vw, 1.75rem);
+  border-block: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 55%, transparent);
+}
+
+.quicknav__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.35rem;
+}
+
+.quicknav__title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.quicknav .demo-note {
+  font-size: 0.76rem;
+}
+
+@media (max-width: 700px) {
+  .quicknav .demo-note {
+    width: 100%;
+  }
+}

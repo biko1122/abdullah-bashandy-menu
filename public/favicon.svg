@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <title>عبد الله بشندي — العلامة المختصرة</title>
+  <rect width="64" height="64" rx="14" fill="#17120c"/>
+  <g stroke="#c4892b" stroke-linecap="round">
+    <path d="M12 54V30a20 20 0 0 1 40 0v24" stroke-width="2.5"/>
+    <path d="M17 54V31a15 15 0 0 1 30 0v23" stroke-width="1" opacity="0.45"/>
+    <path d="M23 36h18c0 7-4 11-9 11s-9-4-9-11Z" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M28 29c2-2-2-4 0-6M36 29c2-2-2-4 0-6" stroke-width="2"/>
+    <path d="M11 54h42" stroke-width="2.5"/>
+  </g>
+</svg>

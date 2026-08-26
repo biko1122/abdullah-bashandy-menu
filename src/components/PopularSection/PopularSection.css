@@ -1,0 +1,23 @@
+.popular__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary);
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid currentColor;
+  transition: gap var(--fast) var(--ease), color var(--fast) var(--ease);
+}
+
+.popular__link:hover {
+  gap: 0.7rem;
+  color: var(--primary-deep);
+}
+
+@media (min-width: 1000px) {
+  .popular__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" width="320" height="96" fill="none">
+  <title>عبد الله بشندي</title>
+  <g transform="translate(248 16)" stroke="#8f2f19" stroke-linecap="round" fill="none">
+    <path d="M6 62V34a18 18 0 0 1 36 0v28" stroke-width="2.5"/>
+    <path d="M16 42h16c0 6.5-3.6 10-8 10s-8-3.5-8-10Z" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M21 35c1.8-1.8-1.8-3.6 0-5.4M31 35c1.8-1.8-1.8-3.6 0-5.4" stroke-width="1.8"/>
+    <path d="M5 62h38" stroke-width="2.5"/>
+  </g>
+  <text x="232" y="52" text-anchor="end" font-family="Aref Ruqaa, serif" font-size="38" font-weight="700" fill="#1d1710">عبد الله بشندي</text>
+  <text x="232" y="74" text-anchor="end" font-family="IBM Plex Sans Arabic, sans-serif" font-size="10" letter-spacing="4" fill="#857463">ABDELALLAH BASHANDY</text>
+</svg>

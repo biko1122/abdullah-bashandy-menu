@@ -1,0 +1,235 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(1.5rem, 5vw, 3rem) clamp(2rem, 6vw, 3.5rem);
+}
+
+/* لطخة لون دافية ورا الهيرو */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset-block-start: -30%;
+  inset-inline-start: -12%;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--accent) 22%, transparent) 0%,
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  display: grid;
+  gap: clamp(1.75rem, 5vw, 3rem);
+  align-items: center;
+}
+
+/* ================================ الكلام ================================ */
+
+.hero__kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: 0.9rem;
+}
+
+.hero__kicker-line {
+  width: 34px;
+  height: 1px;
+  background: var(--primary);
+  opacity: 0.5;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.9rem, 11vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.hero__latin {
+  font-size: clamp(0.62rem, 1.6vw, 0.78rem);
+  font-weight: 500;
+  letter-spacing: 0.42em;
+  color: var(--muted);
+  direction: ltr;
+  text-align: start;
+  margin-top: 0.5rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--border-strong);
+  max-width: 22ch;
+}
+
+.hero__lead {
+  font-size: clamp(1.02rem, 2.4vw, 1.22rem);
+  line-height: 1.85;
+  color: var(--text-soft);
+  margin-top: 1.1rem;
+  max-width: 42ch;
+}
+
+.hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.85rem;
+  margin-top: 1.1rem;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.hero__tags li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.hero__tags li:not(:last-child)::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+
+.hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  margin-top: 2rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+}
+
+.hero__meta dt {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 0.15rem;
+}
+
+.hero__meta dd {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* ================================ الصورة ================================ */
+
+.hero__visual {
+  position: relative;
+}
+
+.hero__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 200px 200px var(--radius-lg) var(--radius-lg);
+  overflow: hidden;
+  container-type: inline-size;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-lg);
+  background: var(--surface-2);
+}
+
+.hero__frame .food-image {
+  transition: transform 900ms var(--ease);
+}
+
+.hero__frame:hover .food-image {
+  transform: scale(1.03);
+}
+
+/* ختم صغير مايل فوق الصورة */
+.hero__badge {
+  position: absolute;
+  inset-block-end: 1rem;
+  inset-inline-start: 1rem;
+  z-index: 2;
+  transform: rotate(-3deg);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent-soft);
+  background: rgba(23, 18, 12, 0.88);
+  border: 1px solid rgba(230, 192, 120, 0.35);
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.hero__caption {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+.hero__caption span {
+  color: var(--accent);
+  font-size: 0.6rem;
+}
+
+.hero__side {
+  position: absolute;
+  inset-block-start: 1.5rem;
+  inset-inline-end: -1.75rem;
+  width: 120px;
+  transform: rotate(90deg);
+  transform-origin: center;
+  display: none;
+}
+
+/* ================================ المقاسات ================================ */
+
+@media (min-width: 860px) {
+  .hero__inner {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+
+  .hero__frame {
+    aspect-ratio: 3 / 4;
+  }
+
+  .hero__side {
+    display: block;
+  }
+}
+
+@media (max-width: 859px) {
+  /* على الموبايل الصورة بتيجي فوق الكلام */
+  .hero__visual {
+    order: -1;
+  }
+
+  .hero__frame {
+    aspect-ratio: 16 / 11;
+    border-radius: var(--radius-lg);
+  }
+
+  .hero__meta {
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,184 @@
+.seldrawer {
+  padding: 1.1rem var(--sheet-pad, 1.15rem) 1.25rem;
+}
+
+.seldrawer__head {
+  padding-top: 0.4rem;
+}
+
+.seldrawer__title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.seldrawer__sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.seldrawer__divider {
+  margin-top: 0.9rem;
+}
+
+/* --------------------------- الحالة الفاضية --------------------------- */
+
+.seldrawer__empty {
+  text-align: center;
+  padding: 3rem 0.5rem 2rem;
+}
+
+.seldrawer__empty-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 0.4rem;
+}
+
+.seldrawer__empty-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.seldrawer__empty-text {
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+
+/* ------------------------------ السطور ------------------------------ */
+
+.seldrawer__list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.selline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px dashed var(--border);
+  animation: rise 220ms var(--ease) both;
+}
+
+.selline:last-child {
+  border-bottom: 0;
+}
+
+.selline__media {
+  width: 62px;
+  height: 62px;
+  flex: none;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  container-type: inline-size;
+}
+
+.selline__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.selline__name {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.selline__choices {
+  font-size: 0.78rem;
+  color: var(--primary);
+}
+
+.selline__unit {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.selline__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.45rem;
+  flex: none;
+}
+
+.selline__total {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.selline__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.selline__remove {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--muted);
+  transition: color var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+
+.selline__remove:hover {
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+/* ------------------------------ الفوتر ------------------------------ */
+
+.seldrawer__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.seldrawer__total-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 3px double var(--border-strong);
+}
+
+.seldrawer__total-label {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
+.seldrawer__total-value {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 6vw, 1.9rem);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.seldrawer__disclaimer {
+  font-size: 0.76rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.seldrawer__actions {
+  display: flex;
+  gap: 0.55rem;
+}
+
+.seldrawer__actions .btn {
+  flex: 1;
+  min-height: 46px;
+  padding-inline: 0.75rem;
+  font-size: 0.92rem;
+}

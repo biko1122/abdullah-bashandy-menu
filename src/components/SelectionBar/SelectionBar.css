@@ -1,0 +1,94 @@
+.selbar {
+  position: fixed;
+  z-index: 90;
+  inset-inline: 0;
+  inset-block-end: 0;
+  padding: 0.75rem var(--gutter) calc(0.75rem + env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  transition: transform var(--normal) var(--ease), opacity var(--normal) var(--ease);
+}
+
+.selbar.is-hidden {
+  transform: translateY(130%);
+  opacity: 0;
+}
+
+.selbar__button {
+  pointer-events: auto;
+  width: 100%;
+  max-width: 520px;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem 0.55rem 1.1rem;
+  border-radius: var(--radius-pill);
+  background: var(--charcoal);
+  color: var(--on-dark);
+  box-shadow: 0 10px 30px rgba(23, 18, 12, 0.35);
+  border: 1px solid rgba(230, 192, 120, 0.22);
+  transition: transform var(--fast) var(--ease), background var(--fast) var(--ease);
+}
+
+.selbar__button:hover {
+  background: #2a2016;
+  transform: translateY(-2px);
+}
+
+.selbar__button:active {
+  transform: translateY(0);
+}
+
+.selbar__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.selbar__count {
+  display: grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding-inline: 0.35rem;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  color: #fff7ea;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.selbar__divider {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(230, 192, 120, 0.45) 0 4px,
+    transparent 4px 8px
+  );
+}
+
+.selbar__total {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent-soft);
+  background: rgba(230, 192, 120, 0.12);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.85rem;
+  white-space: nowrap;
+}
+
+/* على الشاشات الكبيرة زرار "اختياراتك" موجود في الهيدر،
+   فالشريط العايم بيظهر على الموبايل والتابلت بس. */
+@media (min-width: 900px) {
+  .selbar {
+    display: none;
+  }
+}
