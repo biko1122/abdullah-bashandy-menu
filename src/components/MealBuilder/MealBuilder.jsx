@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { mealBuilderSteps } from '../../data/mealBuilder'
-import { getItemById } from '../../data/menu'
+import { useMenu } from '../../context/MenuContext'
 import { useSelection } from '../../context/SelectionContext'
 import { formatPrice } from '../../utils/currency'
 import './MealBuilder.css'
@@ -12,6 +12,7 @@ import './MealBuilder.css'
  * الأصناف اللي بتظهر هنا متظبطة من src/data/mealBuilder.js
  */
 export default function MealBuilder() {
+  const { getItemById } = useMenu()
   const { addItem } = useSelection()
   const [picked, setPicked] = useState({}) // { stepId: [itemId, …] }
   const [added, setAdded] = useState(false)
@@ -24,13 +25,13 @@ export default function MealBuilder() {
           items: step.itemIds.map(getItemById).filter((item) => item && item.available),
         }))
         .filter((step) => step.items.length > 0),
-    []
+    [getItemById]
   )
 
   const chosenItems = useMemo(() => {
     const ids = Object.values(picked).flat()
     return ids.map(getItemById).filter(Boolean)
-  }, [picked])
+  }, [picked, getItemById])
 
   const total = chosenItems.reduce((sum, item) => sum + item.price, 0)
 

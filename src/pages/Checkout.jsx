@@ -1,37 +1,36 @@
 import { useMemo, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import FoodImage from '../components/FoodImage/FoodImage'
 import { ArrowIcon } from '../components/Ornaments/Ornaments'
 import { useSelection } from '../context/SelectionContext'
 import { formatPrice } from '../utils/currency'
-import { getCategory } from '../data/categories'
-import { restaurant } from '../data/restaurant'
-import { ORDER_TYPES, MIN_ORDER_TOTAL, calculateTotals } from '../data/ordering'
+import { MIN_ORDER_TOTAL, calculateTotals } from '../data/ordering'
 import { createOrder, ApiError } from '../utils/api'
 import './Checkout.css'
+
+/**
+ * صفحة تأكيد الطلب — **ديليفري بس** (قرار المطعم: مفيش استلام من الفرع).
+ * خطوتين: بياناتك ← راجع واطلب. رسوم التوصيل بيحددها المطعم في المكالمة.
+ */
 
 /* ----------------------------- التحقق ----------------------------- */
 
 /** الموبايل المصري: 11 رقم بيبدأ بـ 010/011/012/015 */
 const PHONE_PATTERN = /^01[0125]\d{8}$/
 
-const validate = ({ orderType, name, phone, address }) => {
+const validate = ({ name, phone, address }) => {
   const errors = {}
-
-  if (!orderType) errors.orderType = 'اختار توصيل ولا استلام'
 
   if (!name.trim()) errors.name = 'اكتب اسمك'
   else if (name.trim().length < 2) errors.name = 'الاسم قصير أوي'
 
   const digits = phone.replace(/\D/g, '')
   if (!digits) errors.phone = 'اكتب رقم تليفونك'
-  else if (!PHONE_PATTERN.test(digits)) errors.phone = 'الرقم لازم يكون 11 رقم ويبدأ بـ 010 أو 011 أو 012 أو 015'
+  else if (!PHONE_PATTERN.test(digits))
+    errors.phone = 'الرقم لازم يكون 11 رقم ويبدأ بـ 010 أو 011 أو 012 أو 015'
 
-  /* العنوان مطلوب للتوصيل بس */
-  if (orderType === 'DELIVERY') {
-    if (!address.trim()) errors.address = 'اكتب عنوانك عشان نعرف نوصّلك'
-    else if (address.trim().length < 10) errors.address = 'اكتب العنوان بالتفصيل (الشارع والعمارة والدور)'
-  }
+  if (!address.trim()) errors.address = 'اكتب عنوانك عشان نعرف نوصّلك'
+  else if (address.trim().length < 10)
+    errors.address = 'اكتب العنوان بالتفصيل (الشارع والعمارة والدور)'
 
   return errors
 }
@@ -42,7 +41,6 @@ export default function Checkout() {
   const { lines, total: subtotal, isEmpty, clearSelection } = useSelection()
   const navigate = useNavigate()
 
-  const [orderType, setOrderType] = useState('')
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [address, setAddress] = useState('')
@@ -51,14 +49,9 @@ export default function Checkout() {
   const [errors, setErrors] = useState({})
   const [submitting, setSubmitting] = useState(false)
   const [serverError, setServerError] = useState(null)
-  /* الأوردر بعد ما ينجح — بنوري شاشة التأكيد */
   const [placed, setPlaced] = useState(null)
 
-  const totals = useMemo(
-    () => calculateTotals(subtotal, orderType),
-    [subtotal, orderType]
-  )
-
+  const totals = useMemo(() => calculateTotals(subtotal, 'DELIVERY'), [subtotal])
   const belowMinimum = MIN_ORDER_TOTAL > 0 && subtotal < MIN_ORDER_TOTAL
 
   /* ------------------------- الإرسال ------------------------- */
@@ -67,24 +60,22 @@ export default function Checkout() {
     event.preventDefault()
     setServerError(null)
 
-    const found = validate({ orderType, name, phone, address })
+    const found = validate({ name, phone, address })
     setErrors(found)
     if (Object.keys(found).length > 0) {
-      /* بننقّل التركيز لأول حقل فيه غلط عشان اللي بيستخدم كيبورد أو قارئ شاشة */
       document.querySelector(`[data-field="${Object.keys(found)[0]}"]`)?.focus()
       return
     }
 
     setSubmitting(true)
     try {
-      /* بنبعت الأكواد والكميات بس — مفيش ولا سعر.
-         السيرفر بيجيب الأسعار من الداتابيز ويحسب لوحده. */
+      /* بنبعت الأكواد والكميات بس — السيرفر بيحسب من قاعدة البيانات */
       const order = await createOrder({
-        type: orderType,
+        type: 'DELIVERY',
         customer: {
           name: name.trim(),
           phone: phone.replace(/\D/g, ''),
-          address: orderType === 'DELIVERY' ? address.trim() : null,
+          address: address.trim(),
         },
         note: note.trim() || null,
         items: lines.map((line) => ({
@@ -97,11 +88,9 @@ export default function Checkout() {
       setPlaced(order)
       clearSelection()
     } catch (error) {
-      if (error instanceof ApiError) {
-        setServerError(error)
-      } else {
-        setServerError(new ApiError('حصل خطأ مش متوقع. جرّب تاني.'))
-      }
+      setServerError(
+        error instanceof ApiError ? error : new ApiError('حصل خطأ مش متوقع. جرّب تاني.')
+      )
     } finally {
       setSubmitting(false)
     }
@@ -133,15 +122,13 @@ export default function Checkout() {
           </p>
 
           <p className="checkout-done__text">
-            هنكلّمك على <span className="num">{phone}</span> نأكّد الطلب.
-            {placed.type === 'DELIVERY'
-              ? ' وبعدها نجهّزه ونبعته لحد عندك.'
-              : ' تعالى استلمه من الفرع لما يجهز.'}
+            هنكلّمك على <span className="num">{phone}</span> نأكّد الطلب، وبعدها نجهّزه
+            ونبعته لحد عندك.
           </p>
 
           <p className="checkout-done__total">
             الإجمالي <span className="num">{formatPrice(placed.total)}</span>
-            {placed.type === 'DELIVERY' && !placed.deliveryFee ? (
+            {!placed.deliveryFee ? (
               <span className="checkout-done__fee-note">+ رسوم التوصيل بيأكدها معاك المطعم</span>
             ) : null}
           </p>
@@ -189,52 +176,14 @@ export default function Checkout() {
             <span aria-hidden="true">→</span> رجوع
           </button>
           <h1 className="checkout__title">تأكيد الطلب</h1>
+          <span className="checkout__type-badge">🛵 توصيل</span>
         </header>
 
         <form className="checkout__form" onSubmit={handleSubmit} noValidate>
-          {/* ------------------ 1. نوع الطلب ------------------ */}
+          {/* ------------------ 1. بياناتك ------------------ */}
           <section className="cbox">
             <h2 className="cbox__title">
               <span className="cbox__step num">1</span>
-              الطلب توصيل ولا استلام؟
-            </h2>
-
-            <div className="otypes" role="radiogroup" aria-label="نوع الطلب">
-              {ORDER_TYPES.map((type, index) => (
-                <label
-                  key={type.id}
-                  className={`otype ${orderType === type.id ? 'is-on' : ''}`}
-                >
-                  <input
-                    type="radio"
-                    name="orderType"
-                    value={type.id}
-                    checked={orderType === type.id}
-                    data-field={index === 0 ? 'orderType' : undefined}
-                    onChange={() => {
-                      setOrderType(type.id)
-                      setErrors((e) => ({ ...e, orderType: undefined }))
-                    }}
-                  />
-                  <span className="otype__name">{type.name}</span>
-                  <span className="otype__note">{type.note}</span>
-                </label>
-              ))}
-            </div>
-
-            {errors.orderType ? <p className="cerr">{errors.orderType}</p> : null}
-
-            {orderType === 'PICKUP' ? (
-              <p className="cbox__hint">
-                العنوان: {restaurant.location.address}، {restaurant.location.district}
-              </p>
-            ) : null}
-          </section>
-
-          {/* ------------------ 2. بياناتك ------------------ */}
-          <section className="cbox">
-            <h2 className="cbox__title">
-              <span className="cbox__step num">2</span>
               بياناتك
             </h2>
 
@@ -280,25 +229,23 @@ export default function Checkout() {
               )}
             </div>
 
-            {orderType === 'DELIVERY' ? (
-              <div className="cfield">
-                <label htmlFor="address">العنوان</label>
-                <textarea
-                  id="address"
-                  data-field="address"
-                  rows={3}
-                  value={address}
-                  autoComplete="street-address"
-                  placeholder="الشارع، رقم العمارة، الدور، الشقة، وأي علامة مميزة"
-                  aria-invalid={Boolean(errors.address)}
-                  onChange={(e) => {
-                    setAddress(e.target.value)
-                    setErrors((x) => ({ ...x, address: undefined }))
-                  }}
-                />
-                {errors.address ? <p className="cerr">{errors.address}</p> : null}
-              </div>
-            ) : null}
+            <div className="cfield">
+              <label htmlFor="address">عنوان التوصيل</label>
+              <textarea
+                id="address"
+                data-field="address"
+                rows={3}
+                value={address}
+                autoComplete="street-address"
+                placeholder="الشارع، رقم العمارة، الدور، الشقة، وأي علامة مميزة"
+                aria-invalid={Boolean(errors.address)}
+                onChange={(e) => {
+                  setAddress(e.target.value)
+                  setErrors((x) => ({ ...x, address: undefined }))
+                }}
+              />
+              {errors.address ? <p className="cerr">{errors.address}</p> : null}
+            </div>
 
             <div className="cfield">
               <label htmlFor="note">
@@ -315,36 +262,29 @@ export default function Checkout() {
             </div>
           </section>
 
-          {/* ------------------ 3. المراجعة ------------------ */}
+          {/* ------------------ 2. المراجعة ------------------ */}
           <section className="cbox">
             <h2 className="cbox__title">
-              <span className="cbox__step num">3</span>
+              <span className="cbox__step num">2</span>
               راجع طلبك
             </h2>
 
             <ul className="creview">
-              {lines.map((line) => {
-                const category = getCategory(line.item.category)
-                return (
-                  <li className="creview__line" key={line.key}>
-                    <div className="creview__media">
-                      <FoodImage item={line.item} hue={category?.accent ?? 30} />
-                    </div>
+              {lines.map((line) => (
+                <li className="creview__line" key={line.key}>
+                  <div className="creview__info">
+                    <p className="creview__name">{line.item.name}</p>
+                    {line.choiceSummary ? (
+                      <p className="creview__choices">{line.choiceSummary}</p>
+                    ) : null}
+                    <p className="creview__unit num">
+                      {line.quantity} × {formatPrice(line.unitPrice)}
+                    </p>
+                  </div>
 
-                    <div className="creview__info">
-                      <p className="creview__name">{line.item.name}</p>
-                      {line.choiceSummary ? (
-                        <p className="creview__choices">{line.choiceSummary}</p>
-                      ) : null}
-                      <p className="creview__unit num">
-                        {line.quantity} × {formatPrice(line.unitPrice)}
-                      </p>
-                    </div>
-
-                    <p className="creview__total num">{formatPrice(line.lineTotal)}</p>
-                  </li>
-                )
-              })}
+                  <p className="creview__total num">{formatPrice(line.lineTotal)}</p>
+                </li>
+              ))}
             </ul>
 
             <dl className="csum">
@@ -353,18 +293,12 @@ export default function Checkout() {
                 <dd className="num">{formatPrice(totals.subtotal)}</dd>
               </div>
 
-              {orderType ? (
-                <div>
-                  <dt>{orderType === 'DELIVERY' ? 'التوصيل' : 'الاستلام من الفرع'}</dt>
-                  <dd className={totals.deliveryFee > 0 ? 'num' : 'csum__policy'}>
-                    {orderType === 'DELIVERY'
-                      ? totals.deliveryFee > 0
-                        ? formatPrice(totals.deliveryFee)
-                        : 'بيحددها المطعم'
-                      : 'مجانًا'}
-                  </dd>
-                </div>
-              ) : null}
+              <div>
+                <dt>التوصيل</dt>
+                <dd className={totals.deliveryFee > 0 ? 'num' : 'csum__policy'}>
+                  {totals.deliveryFee > 0 ? formatPrice(totals.deliveryFee) : 'بيحددها المطعم'}
+                </dd>
+              </div>
 
               <div className="csum__total">
                 <dt>الإجمالي</dt>
@@ -372,11 +306,7 @@ export default function Checkout() {
               </div>
             </dl>
 
-            {!orderType ? (
-              <p className="chint">اختار نوع الطلب فوق عشان نحسبلك الإجمالي</p>
-            ) : null}
-
-            {orderType === 'DELIVERY' && totals.deliveryFee === 0 ? (
+            {totals.deliveryFee === 0 ? (
               <p className="chint">
                 الإجمالي ده حساب الأكل بس — رسوم التوصيل بيأكدها معاك المطعم في المكالمة.
               </p>
@@ -411,7 +341,7 @@ export default function Checkout() {
             disabled={submitting || belowMinimum}
           >
             {submitting ? 'بنبعت الطلب…' : 'اطلب دلوقتي'}
-            {!submitting && orderType ? (
+            {!submitting ? (
               <span className="checkout__submit-total num">{formatPrice(totals.total)}</span>
             ) : null}
           </button>

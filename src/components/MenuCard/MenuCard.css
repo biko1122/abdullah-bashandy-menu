@@ -37,36 +37,6 @@
   border-color: var(--accent);
 }
 
-/* ---------------------------- الصورة ---------------------------- */
-
-.card__media {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  container-type: inline-size;
-  background: var(--surface-2);
-}
-
-.card__media .food-image {
-  transition: transform 600ms var(--ease);
-}
-
-.card:hover .card__media .food-image {
-  transform: scale(1.06);
-}
-
-/* البادچات فوق الصورة */
-.card__badges--over {
-  position: absolute;
-  z-index: 2;
-  inset-block-start: 0.55rem;
-  inset-inline-start: 0.55rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.3rem;
-}
-
 /* ---------------------------- النص ---------------------------- */
 
 .card__body {
@@ -102,11 +72,9 @@
   letter-spacing: 0.01em;
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-pill);
-  /* فوق الصورة، فلازم خلفية غامقة عشان النص يبان مهما كانت الصورة */
-  background: rgba(23, 18, 12, 0.82);
-  color: var(--accent-soft);
-  border: 1px solid rgba(230, 192, 120, 0.35);
-  backdrop-filter: blur(4px);
+  background: hsl(var(--card-hue, 30) 46% 94%);
+  color: hsl(var(--card-hue, 30) 55% 30%);
+  border: 1px solid hsl(var(--card-hue, 30) 40% 80%);
 }
 
 .card__out-tag {
@@ -114,17 +82,13 @@
   font-weight: 600;
   padding: 0.2rem 0.55rem;
   border-radius: var(--radius-pill);
-  background: rgba(23, 18, 12, 0.78);
-  color: #e4d7c3;
-  backdrop-filter: blur(4px);
+  background: var(--surface-2);
+  color: var(--muted);
+  border: 1px solid var(--border);
 }
 
 /* عدّاد "متختار كام مرة" */
 .card__count {
-  position: absolute;
-  z-index: 3;
-  inset-block-end: 0.55rem;
-  inset-inline-start: 0.55rem;
   min-width: 24px;
   height: 24px;
   padding-inline: 0.4rem;
@@ -141,19 +105,17 @@
 
 /* القلب */
 .card__fav {
-  position: absolute;
-  z-index: 3;
-  inset-block-start: 0.5rem;
-  inset-inline-end: 0.5rem;
+  position: relative;
+  z-index: 2;
+  flex: none;
   display: grid;
   place-items: center;
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
+  margin-inline-start: auto;
   border-radius: 50%;
-  background: rgba(251, 246, 236, 0.85);
+  background: transparent;
   color: var(--muted);
-  border: 1px solid rgba(221, 205, 180, 0.7);
-  backdrop-filter: blur(6px);
   transition: color var(--fast) var(--ease), transform var(--fast) var(--ease),
     background var(--fast) var(--ease);
 }
@@ -293,10 +255,6 @@
   filter: grayscale(0.9);
 }
 
-.card--out .card__media .food-image {
-  filter: grayscale(0.85);
-}
-
 .card--out:hover {
   transform: none;
 }
@@ -313,9 +271,11 @@
     font-size: 0.96rem;
   }
 
-  /* على الموبايل الوصف بيتخفي عشان الكارت يفضل صغير وسريع */
+  /* الوصف ظاهر على الموبايل — بس أصغر وبسطر واحد إضافي */
   .card__desc {
-    display: none;
+    font-size: 0.78rem;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
   }
 
   .card__price {

@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import Sheet from '../Sheet/Sheet'
-import FoodImage from '../FoodImage/FoodImage'
 import QuantityControl from '../QuantityControl/QuantityControl'
 import { Divider } from '../Ornaments/Ornaments'
 import { useSelection } from '../../context/SelectionContext'
@@ -92,10 +91,6 @@ export default function SelectionDrawer({ open, onClose }) {
                   key={line.key}
                   style={{ '--line-hue': category?.accent ?? 30 }}
                 >
-                  <div className="selline__media">
-                    <FoodImage item={line.item} hue={category?.accent ?? 30} />
-                  </div>
-
                   <div className="selline__info">
                     <p className="selline__name">{line.item.name}</p>
                     {line.choiceSummary ? (

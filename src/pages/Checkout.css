@@ -38,6 +38,17 @@
   font-weight: 700;
 }
 
+.checkout__type-badge {
+  margin-inline-start: auto;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-soft);
+}
+
 /* -------------------------------- الأقسام ------------------------------- */
 
 .checkout__form {
@@ -234,16 +245,6 @@
 .creview__line:last-child {
   border-bottom: 0;
   padding-bottom: 0;
-}
-
-.creview__media {
-  width: 48px;
-  height: 48px;
-  flex: none;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
-  container-type: inline-size;
 }
 
 .creview__info {

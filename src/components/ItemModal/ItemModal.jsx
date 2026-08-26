@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
 import Sheet from '../Sheet/Sheet'
-import FoodImage from '../FoodImage/FoodImage'
 import QuantityControl from '../QuantityControl/QuantityControl'
 import { HeartIcon } from '../Ornaments/Ornaments'
 import { useSelection } from '../../context/SelectionContext'
@@ -68,10 +67,6 @@ export default function ItemModal({ item, open, onClose }) {
   return (
     <Sheet open={open} onClose={onClose} labelledBy="item-modal-title" variant="modal">
       <div className="item">
-        <div className="item__media">
-          <FoodImage item={shown} hue={category?.accent ?? 30} eager />
-        </div>
-
         <div className="item__content">
           <div className="item__meta">
             <span className="item__category">{category?.name}</span>

@@ -8,12 +8,14 @@ import StorySection from '../components/StorySection/StorySection'
 import LocationSection from '../components/LocationSection/LocationSection'
 import ItemModal from '../components/ItemModal/ItemModal'
 import { categories } from '../data/categories'
-import { menu, popularItems, PRICES_ARE_DEMO } from '../data/menu'
+import { PRICES_ARE_DEMO } from '../data/menu'
+import { useMenu } from '../context/MenuContext'
 import { restaurant } from '../data/restaurant'
 import './Home.css'
 
 /** الصفحة الرئيسية — تعريف سريع بالمحل وأشهر الأصناف وتجربة "اعمل وجبتك". */
 export default function Home() {
+  const { menu, popularItems } = useMenu()
   const navigate = useNavigate()
   const [activeItem, setActiveItem] = useState(null)
 

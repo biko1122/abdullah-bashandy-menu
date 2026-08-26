@@ -13,7 +13,12 @@
  * ==========================================================================
  */
 
-const BASE_URL = (import.meta.env.VITE_API_URL || 'http://localhost:4000').replace(/\/$/, '')
+/* عنوان الـ API — بيتحدد لوحده:
+   النسخة المرفوعة → السيرفر اللايف، والتطوير المحلي → localhost.
+   VITE_API_URL (لو متظبط) بياخد الأولوية على الاتنين. */
+const PRODUCTION_API = 'https://bashandy-backend-production.up.railway.app'
+const DEFAULT_API = import.meta.env.PROD ? PRODUCTION_API : 'http://localhost:4000'
+const BASE_URL = (import.meta.env.VITE_API_URL || DEFAULT_API).replace(/\/$/, '')
 
 /** مهلة الانتظار — بعدها بنعتبر إن السيرفر مش راد. */
 const TIMEOUT_MS = 15000
@@ -89,7 +94,9 @@ const request = async (path, { method = 'GET', body, signal } = {}) => {
 
 /* ------------------------------ المنيو ------------------------------ */
 
-export const fetchMenu = () => request('/api/menu?available=true')
+/* من غير فلتر available — الصنف الموقوف بيظهر رمادي ("خلص النهاردة")
+   بدل ما يختفي فجأة ويحيّر اللي كان بيدور عليه */
+export const fetchMenu = () => request('/api/menu')
 export const fetchProducts = (query = '') => request(`/api/products${query}`)
 
 /* ----------------------------- الأوردرات ----------------------------- */

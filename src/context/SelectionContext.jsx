@@ -19,7 +19,7 @@ import {
   useMemo,
   useReducer,
 } from 'react'
-import { getItemById } from '../data/menu'
+import { useMenu } from './MenuContext'
 
 const STORAGE_KEY = 'bashandy.selection.v1'
 
@@ -113,6 +113,9 @@ const reducer = (lines, action) => {
 /* ------------------------------ المزوّد -------------------------------- */
 
 export function SelectionProvider({ children }) {
+  /* المنيو الحي — الأسعار والأسماء بتتقري منه وقت العرض */
+  const { getItemById } = useMenu()
+
   const [lines, dispatch] = useReducer(reducer, null, readStoredLines)
 
   /* حفظ تلقائي في المتصفح */

@@ -6,7 +6,8 @@ import MenuCard from '../components/MenuCard/MenuCard'
 import Search from '../components/Search/Search'
 import ItemModal from '../components/ItemModal/ItemModal'
 import { categories, getCategory } from '../data/categories'
-import { menu, PRICES_ARE_DEMO } from '../data/menu'
+import { PRICES_ARE_DEMO } from '../data/menu'
+import { useMenu } from '../context/MenuContext'
 import { restaurant } from '../data/restaurant'
 import { formatNumber } from '../utils/currency'
 import { searchItems } from '../utils/search'
@@ -14,6 +15,7 @@ import './Menu.css'
 
 /** المنيو الكامل: بحث + فلترة بالأقسام، كله لحظي من غير تحميل صفحة. */
 export default function Menu() {
+  const { menu } = useMenu()
   const [searchParams, setSearchParams] = useSearchParams()
   const [query, setQuery] = useState('')
   const [activeItem, setActiveItem] = useState(null)
@@ -45,11 +47,12 @@ export default function Menu() {
         },
         { all: menu.length }
       ),
-    []
+    /* menu في الاعتماديات — أول ما البيانات الحية توصل من السيرفر العدادات بتتحدث */
+    [menu]
   )
 
   /* البحث — المنطق نفسه في src/utils/search.js */
-  const searched = useMemo(() => searchItems(menu, query), [query])
+  const searched = useMemo(() => searchItems(menu, query), [menu, query])
 
   const filtered = useMemo(
     () =>
