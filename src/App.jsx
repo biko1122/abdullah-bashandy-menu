@@ -6,6 +6,7 @@ import SelectionBar from './components/SelectionBar/SelectionBar'
 import SelectionDrawer from './components/SelectionDrawer/SelectionDrawer'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
+import Checkout from './pages/Checkout'
 import './App.css'
 
 /**
@@ -51,7 +52,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
-          {/* أي رابط تاني بيرجع للرئيسية — مفيش صفحات تانية في الموقع */}
+          <Route path="/checkout" element={<Checkout />} />
+          {/* أي رابط تاني بيرجع للرئيسية */}
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

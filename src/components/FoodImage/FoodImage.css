@@ -1,0 +1,53 @@
+.food-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--surface-2);
+}
+
+/* ---------- البديل لما الصورة لسه مش موجودة ---------- */
+
+.food-image--placeholder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: hsl(var(--ph-hue) 40% 34%);
+  background: linear-gradient(
+    160deg,
+    hsl(var(--ph-hue) 46% 88%) 0%,
+    hsl(var(--ph-hue) 38% 78%) 55%,
+    hsl(var(--ph-hue) 30% 70%) 100%
+  );
+}
+
+.food-image--placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23p)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+.food-image__monogram {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 11cqw, 3rem);
+  font-weight: 700;
+  color: hsl(var(--ph-hue) 45% 26%);
+  opacity: 0.55;
+  letter-spacing: -0.02em;
+  padding-inline: 0.4rem;
+  text-align: center;
+}
+
+.food-image__motif {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(50%, -50%);
+  width: 78%;
+  height: auto;
+  opacity: 0.3;
+  color: hsl(var(--ph-hue) 40% 30%);
+}

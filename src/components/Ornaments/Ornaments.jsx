@@ -1,50 +1,25 @@
+import logoEmblem from '../../assets/brand/logo-emblem.png'
+
 /**
  * زخارف الهوية — عناصر صغيرة بتتكرر في الموقع.
  * كلها SVG بتاخد لونها من currentColor، يعني بتتلوّن لوحدها حسب المكان.
  */
 
-/** علامة المحل (الشعار المختصر) — بتستخدم في النافبار والفوتر والأيقونة. */
+/**
+ * علامة المحل — الشعار الرسمي المتاخد من غلاف المنيو المطبوع.
+ * (كان قبل كده رسمة SVG، دلوقتي بقى الشعار الحقيقي بتاع المطعم)
+ */
 export function BrandMark({ size = 40, className = '' }) {
   return (
-    <svg
-      className={className}
+    <img
+      className={`brand-mark ${className}`}
+      src={logoEmblem}
       width={size}
       height={size}
-      viewBox="0 0 64 64"
-      fill="none"
+      alt=""
       aria-hidden="true"
-      focusable="false"
-    >
-      {/* القوس — مستوحى من واجهات المحلات القديمة */}
-      <path
-        d="M8 58V30a24 24 0 0 1 48 0v28"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinecap="round"
-      />
-      <path
-        d="M14 58V31a18 18 0 0 1 36 0v27"
-        stroke="currentColor"
-        strokeWidth="1"
-        opacity="0.45"
-      />
-      {/* الطبق */}
-      <path
-        d="M21 38h22c0 8-5 13-11 13s-11-5-11-13Z"
-        stroke="currentColor"
-        strokeWidth="2.5"
-        strokeLinejoin="round"
-      />
-      {/* بخار */}
-      <path
-        d="M27 30c2-2-2-4 0-6M37 30c2-2-2-4 0-6"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        opacity="0.8"
-      />
-      <path d="M6 58h52" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-    </svg>
+      decoding="async"
+    />
   )
 }
 

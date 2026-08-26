@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
-import { ArrowIcon, PatternStrip } from '../Ornaments/Ornaments'
+import FoodImage from '../FoodImage/FoodImage'
+import { ArrowIcon } from '../Ornaments/Ornaments'
 import { restaurant } from '../../data/restaurant'
 import './Hero.css'
 
 /**
- * الهيرو — كلام مطبوع بس، من غير صور.
- * الاسم كبير في النص، وتحته التفاصيل الصغيرة زي غلاف منيو مطبوع.
+ * الهيرو — كلام على ناحية وصورة كبيرة على الناحية التانية.
  */
 export default function Hero() {
   const { location, microCopy } = restaurant
@@ -69,7 +69,24 @@ export default function Hero() {
           </dl>
         </div>
 
-        <PatternStrip className="hero__strip" height={12} opacity={0.5} />
+        {/* ------------------------- الصورة ------------------------- */}
+        <div className="hero__visual">
+          <div className="hero__frame">
+            <FoodImage
+              folder="hero"
+              src="hero-main.jpg"
+              alt="طبق من أكل عبد الله بشندي"
+              label="أكل مصري"
+              hue={26}
+              eager
+            />
+            <span className="hero__badge">{restaurant.tagline}</span>
+          </div>
+
+          <p className="hero__caption">
+            <span aria-hidden="true">◆</span> صورة من المحل — {location.district}
+          </p>
+        </div>
       </div>
     </section>
   )

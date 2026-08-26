@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Sheet from '../Sheet/Sheet'
+import FoodImage from '../FoodImage/FoodImage'
 import QuantityControl from '../QuantityControl/QuantityControl'
 import { Divider } from '../Ornaments/Ornaments'
 import { useSelection } from '../../context/SelectionContext'
@@ -10,8 +11,9 @@ import './SelectionDrawer.css'
 /**
  * "اختياراتك" — ملخّص اللي المستخدم اختاره وإجمالي الحساب.
  *
- * مفيش هنا: دفع، تأكيد طلب، توصيل، عنوان، ولا أي حاجة من دي.
- * الحسبة كلها: مجموع (سعر الصنف × الكمية).
+ * منه بيروح لصفحة الطلب (/checkout) اللي فيها نوع الطلب والبيانات.
+ * الحسبة هنا: مجموع (سعر الصنف × الكمية) — رسوم التوصيل بتتحسب
+ * في صفحة الطلب بعد ما يختار توصيل ولا استلام.
  */
 export default function SelectionDrawer({ open, onClose }) {
   const { lines, total, itemCount, isEmpty, increaseQuantity, decreaseQuantity, removeItem, clearSelection } =
@@ -36,8 +38,13 @@ export default function SelectionDrawer({ open, onClose }) {
             </div>
 
             <p className="seldrawer__disclaimer">
-              الحساب تقديري حسب أسعار المنيو — مفيش أي طلب بيتبعت من هنا.
+              رسوم التوصيل بيحددها المطعم وقت تأكيد الطلب.
             </p>
+
+            <Link to="/checkout" className="btn seldrawer__checkout" onClick={onClose}>
+              اتمم الطلب
+              <span className="seldrawer__checkout-total num">{formatPrice(total)}</span>
+            </Link>
 
             <div className="seldrawer__actions">
               <button type="button" className="btn btn--ghost" onClick={handleClear}>
@@ -85,6 +92,10 @@ export default function SelectionDrawer({ open, onClose }) {
                   key={line.key}
                   style={{ '--line-hue': category?.accent ?? 30 }}
                 >
+                  <div className="selline__media">
+                    <FoodImage item={line.item} hue={category?.accent ?? 30} />
+                  </div>
+
                   <div className="selline__info">
                     <p className="selline__name">{line.item.name}</p>
                     {line.choiceSummary ? (

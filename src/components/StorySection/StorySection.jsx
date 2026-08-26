@@ -1,3 +1,4 @@
+import FoodImage from '../FoodImage/FoodImage'
 import { PatternStrip } from '../Ornaments/Ornaments'
 import { restaurant } from '../../data/restaurant'
 import './StorySection.css'
@@ -13,6 +14,16 @@ export default function StorySection() {
       <PatternStrip className="story__top-pattern" height={14} opacity={0.35} />
 
       <div className="story__inner shell">
+        <div className="story__visual">
+          <FoodImage
+            folder="atmosphere"
+            src="shopfront.jpg"
+            alt="سفرة من أكل عبد الله بشندي"
+            label="بشندي"
+            hue={30}
+          />
+        </div>
+
         <div className="story__text">
           <p className="story__kicker">من قلب {restaurant.location.district}</p>
 

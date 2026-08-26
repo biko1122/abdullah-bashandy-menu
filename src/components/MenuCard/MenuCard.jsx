@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import FoodImage from '../FoodImage/FoodImage'
 import { HeartIcon } from '../Ornaments/Ornaments'
 import { useSelection } from '../../context/SelectionContext'
 import { useFavorites } from '../../context/FavoritesContext'
@@ -7,7 +8,10 @@ import { getCategory } from '../../data/categories'
 import './MenuCard.css'
 
 /**
- * كارت الصنف في المنيو — اسم وسعر بس، من غير صور.
+ * كارت الصنف في المنيو — صورة واسم وسعر.
+ *
+ * الصورة بتتلاقى تلقائيًا من كود الصنف (شوف src/utils/images.js).
+ * لو مفيش صورة للصنف، بيستخدم صورة القسم، ولو مفيش بيرسم بديل.
  *
  * الضغط على أي مكان في الكارت → يفتح تفاصيل الصنف.
  * الضغط على (+) → بيضيف على طول للاختيارات،
@@ -52,34 +56,35 @@ export default function MenuCard({ item, onOpen }) {
       /* لون القسم — بيلوّن الشريط الجانبي والبادچات */
       style={{ '--card-hue': category?.accent ?? 30 }}
     >
-      <div className="card__body">
-        {/* ---------------- السطر العلوي: البادچات والقلب ---------------- */}
-        <div className="card__top">
-          <div className="card__badges">
-            {item.popular && item.available ? (
-              <span className="card__stamp">الأكثر طلبًا</span>
-            ) : null}
+      {/* ---------------- الصورة ---------------- */}
+      <div className="card__media">
+        <FoodImage item={item} hue={category?.accent ?? 30} />
 
-            {!item.available ? <span className="card__out-tag">خلص النهاردة</span> : null}
-
-            {countInSelection > 0 ? (
-              <span className="card__count num" aria-hidden="true">
-                {countInSelection}
-              </span>
-            ) : null}
-          </div>
-
-          <button
-            type="button"
-            className={`card__fav ${favorite ? 'is-on' : ''}`}
-            onClick={() => toggleFavorite(item.id)}
-            aria-pressed={favorite}
-            aria-label={favorite ? `شيل ${item.name} من المفضلة` : `ضيف ${item.name} للمفضلة`}
-          >
-            <HeartIcon filled={favorite} />
-          </button>
+        <div className="card__badges card__badges--over">
+          {item.popular && item.available ? (
+            <span className="card__stamp">الأكثر طلبًا</span>
+          ) : null}
+          {!item.available ? <span className="card__out-tag">خلص النهاردة</span> : null}
         </div>
 
+        <button
+          type="button"
+          className={`card__fav ${favorite ? 'is-on' : ''}`}
+          onClick={() => toggleFavorite(item.id)}
+          aria-pressed={favorite}
+          aria-label={favorite ? `شيل ${item.name} من المفضلة` : `ضيف ${item.name} للمفضلة`}
+        >
+          <HeartIcon filled={favorite} />
+        </button>
+
+        {countInSelection > 0 ? (
+          <span className="card__count num" aria-hidden="true">
+            {countInSelection}
+          </span>
+        ) : null}
+      </div>
+
+      <div className="card__body">
         {/* ---------------- الاسم والوصف ---------------- */}
         <h3 className="card__name">
           <button type="button" className="card__trigger" onClick={() => onOpen(item)}>

@@ -29,6 +29,15 @@
   padding-block: clamp(2.5rem, 7vw, 4.5rem);
 }
 
+.story__visual {
+  aspect-ratio: 5 / 4;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  container-type: inline-size;
+  border: 1px solid rgba(230, 192, 120, 0.18);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
 .story__kicker {
   display: inline-flex;
   align-items: center;
@@ -82,7 +91,11 @@
 }
 
 @media (min-width: 860px) {
-  .story__title {
-    max-width: 18ch;
+  .story__inner {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .story__visual {
+    aspect-ratio: 4 / 5;
   }
 }

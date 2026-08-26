@@ -435,3 +435,13 @@ h4 {
 body.is-locked {
   overflow: hidden;
 }
+
+
+/* ---------- علامة المحل (الشعار الرسمي) ---------- */
+
+.brand-mark {
+  display: block;
+  flex: none;
+  border-radius: 50%;
+  object-fit: contain;
+}
