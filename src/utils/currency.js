@@ -20,10 +20,17 @@ const ARABIC_DIGITS = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩
 export const toArabicDigits = (value) =>
   String(value).replace(/[0-9]/g, (digit) => ARABIC_DIGITS[Number(digit)])
 
-/** الرقم لوحده، من غير رمز العملة. */
+/**
+ * الرقم لوحده، من غير رمز العملة.
+ * أغلب الأسعار أرقام صحيحة، بس فيه أصناف بنص جنيه (زي قرص الفلافل القماطي بـ 2.5)
+ * فبنسيب الكسر زي ما هو بدل ما نقرّبه.
+ */
 export const formatNumber = (value) => {
-  const rounded = Math.round(Number(value) || 0)
-  return USE_ARABIC_NUMERALS ? toArabicDigits(rounded) : String(rounded)
+  const number = Number(value) || 0
+  const text = Number.isInteger(number)
+    ? String(number)
+    : String(Math.round(number * 100) / 100)
+  return USE_ARABIC_NUMERALS ? toArabicDigits(text) : text
 }
 
 /**

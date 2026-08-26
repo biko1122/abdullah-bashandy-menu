@@ -13,21 +13,21 @@ export const mealBuilderSteps = [
     title: 'اختار الأساسي',
     note: 'حاجة واحدة',
     mode: 'single', // single = اختيار واحد | multi = أكتر من حاجة
-    itemIds: ['foul-010', 'sand-010', 'grill-001', 'brg-002'],
+    itemIds: ['fs-001', 'ls-001', 'sig-007', 'gr-003'],
+  },
+  {
+    id: 'sides',
+    title: 'اختار اللي معاه',
+    note: 'اللي انت عايزه',
+    mode: 'multi',
+    itemIds: ['sl-001', 'sl-002', 'sl-003', 'sw-002'],
   },
   {
     id: 'extras',
-    title: 'اختار الإضافات',
-    note: 'اللي انت عايزه',
+    title: 'زوّد حاجة؟',
+    note: 'اختياري',
     mode: 'multi',
-    itemIds: ['ext-007', 'ext-001', 'ext-003', 'ext-004'],
-  },
-  {
-    id: 'drink',
-    title: 'اختار مشروبك',
-    note: 'حاجة واحدة',
-    mode: 'single',
-    itemIds: ['drk-001', 'drk-006', 'drk-008'],
+    itemIds: ['ex-001', 'ex-004', 'ex-006', 'sl-012'],
   },
 ]
 

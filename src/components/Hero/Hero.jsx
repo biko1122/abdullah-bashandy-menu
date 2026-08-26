@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom'
-import FoodImage from '../FoodImage/FoodImage'
 import { ArrowIcon, PatternStrip } from '../Ornaments/Ornaments'
 import { restaurant } from '../../data/restaurant'
 import './Hero.css'
 
 /**
- * الهيرو — مبني على فكرة غلاف مجلة أكل مصرية:
- * الكلام على ناحية، وصورة كبيرة على الناحية التانية، وتفاصيل صغيرة مطبوعة حواليهم.
+ * الهيرو — كلام مطبوع بس، من غير صور.
+ * الاسم كبير في النص، وتحته التفاصيل الصغيرة زي غلاف منيو مطبوع.
  */
 export default function Hero() {
   const { location, microCopy } = restaurant
@@ -14,7 +13,6 @@ export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__inner shell">
-        {/* ------------------------- الكلام ------------------------- */}
         <div className="hero__text">
           <p className="hero__kicker">
             <span className="hero__kicker-line" aria-hidden="true" />
@@ -71,28 +69,7 @@ export default function Hero() {
           </dl>
         </div>
 
-        {/* ------------------------- الصورة ------------------------- */}
-        <div className="hero__visual">
-          <div className="hero__frame">
-            <FoodImage
-              folder="hero"
-              src="hero-main.jpg"
-              alt="طبق من أكل عبد الله بشندي"
-              label="أكل مصري"
-              hue={26}
-              eager
-            />
-            <span className="hero__badge">{restaurant.tagline}</span>
-          </div>
-
-          <p className="hero__caption">
-            <span aria-hidden="true">◆</span> صورة من المحل — السيدة زينب
-          </p>
-
-          <div className="hero__side" aria-hidden="true">
-            <PatternStrip height={12} opacity={0.65} />
-          </div>
-        </div>
+        <PatternStrip className="hero__strip" height={12} opacity={0.5} />
       </div>
     </section>
   )

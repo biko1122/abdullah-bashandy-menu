@@ -1,10 +1,10 @@
-import FoodImage from '../FoodImage/FoodImage'
 import { PatternStrip } from '../Ornaments/Ornaments'
 import { restaurant } from '../../data/restaurant'
 import './StorySection.css'
 
 /**
- * "من قلب السيدة زينب" — القسم اللي بيدّي الموقع شخصيته.
+ * "من قلب المنيرة" — القسم اللي بيدّي الموقع شخصيته.
+ * اسم الحي بيتقرأ من src/data/restaurant.js عشان ميبقاش مكتوب في مكانين.
  * حكاية قصيرة… مش صفحة "من نحن" كاملة.
  */
 export default function StorySection() {
@@ -13,18 +13,8 @@ export default function StorySection() {
       <PatternStrip className="story__top-pattern" height={14} opacity={0.35} />
 
       <div className="story__inner shell">
-        <div className="story__visual">
-          <FoodImage
-            folder="atmosphere"
-            src="shopfront.jpg"
-            alt="واجهة المحل في السيدة زينب"
-            label="السيدة زينب"
-            hue={30}
-          />
-        </div>
-
         <div className="story__text">
-          <p className="story__kicker">من قلب السيدة زينب</p>
+          <p className="story__kicker">من قلب {restaurant.location.district}</p>
 
           <h2 className="story__title" id="story-title">
             أكل مصري بسيط…

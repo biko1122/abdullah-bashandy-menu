@@ -10,111 +10,31 @@
     border-color var(--normal) var(--ease);
 }
 
+/* شريط بلون القسم على جنب الكارت — بديل الصورة في التمييز بين الأقسام */
+.card::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 0;
+  width: 4px;
+  background: hsl(var(--card-hue, 30) 52% 52%);
+  opacity: 0.75;
+  transition: opacity var(--normal) var(--ease), width var(--normal) var(--ease);
+}
+
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--border-strong);
   box-shadow: var(--shadow);
 }
 
+.card:hover::before {
+  width: 6px;
+  opacity: 1;
+}
+
 .card:focus-within {
   border-color: var(--accent);
-}
-
-/* ---------------------------- الصورة ---------------------------- */
-
-.card__media {
-  position: relative;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  container-type: inline-size;
-  background: var(--surface-2);
-}
-
-.card__media .food-image {
-  transition: transform 600ms var(--ease);
-}
-
-.card:hover .card__media .food-image {
-  transform: scale(1.06);
-}
-
-/* ختم "الأكثر طلبًا" */
-.card__stamp {
-  position: absolute;
-  inset-block-start: 0.6rem;
-  inset-inline-start: 0.6rem;
-  z-index: 2;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-pill);
-  background: rgba(23, 18, 12, 0.82);
-  color: var(--accent-soft);
-  border: 1px solid rgba(230, 192, 120, 0.35);
-  backdrop-filter: blur(4px);
-}
-
-.card__out-tag {
-  position: absolute;
-  inset-block-start: 0.6rem;
-  inset-inline-start: 0.6rem;
-  z-index: 2;
-  font-size: 0.68rem;
-  font-weight: 600;
-  padding: 0.2rem 0.55rem;
-  border-radius: var(--radius-pill);
-  background: rgba(23, 18, 12, 0.78);
-  color: #e4d7c3;
-}
-
-/* القلب */
-.card__fav {
-  position: absolute;
-  z-index: 3;
-  inset-block-start: 0.55rem;
-  inset-inline-end: 0.55rem;
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(251, 246, 236, 0.85);
-  color: var(--muted);
-  border: 1px solid rgba(221, 205, 180, 0.7);
-  backdrop-filter: blur(6px);
-  transition: color var(--fast) var(--ease), transform var(--fast) var(--ease),
-    background var(--fast) var(--ease);
-}
-
-.card__fav:hover {
-  color: var(--primary);
-  transform: scale(1.08);
-}
-
-.card__fav.is-on {
-  color: var(--primary);
-  background: rgba(255, 247, 234, 0.95);
-}
-
-/* عدّاد "متختار كام مرة" */
-.card__count {
-  position: absolute;
-  z-index: 3;
-  inset-block-end: 0.55rem;
-  inset-inline-start: 0.55rem;
-  min-width: 26px;
-  height: 26px;
-  padding-inline: 0.4rem;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius-pill);
-  background: var(--herb);
-  color: #f4f7f0;
-  font-size: 0.8rem;
-  font-weight: 700;
-  box-shadow: var(--shadow-sm);
-  animation: rise 200ms var(--ease) both;
 }
 
 /* ---------------------------- النص ---------------------------- */
@@ -122,15 +42,98 @@
 .card__body {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  padding: 0.85rem 0.9rem 0.8rem;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem 0.85rem;
+  padding-inline-start: 1.15rem;
   flex: 1;
 }
 
-.card__name {
-  font-size: 1.02rem;
+/* السطر العلوي: البادچات على ناحية، القلب على التانية */
+.card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 28px;
+}
+
+.card__badges {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+/* ختم "الأكثر طلبًا" */
+.card__stamp {
+  font-size: 0.68rem;
   font-weight: 600;
-  line-height: 1.4;
+  letter-spacing: 0.01em;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: hsl(var(--card-hue, 30) 46% 94%);
+  color: hsl(var(--card-hue, 30) 55% 30%);
+  border: 1px solid hsl(var(--card-hue, 30) 40% 80%);
+}
+
+.card__out-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+/* عدّاد "متختار كام مرة" */
+.card__count {
+  min-width: 24px;
+  height: 24px;
+  padding-inline: 0.4rem;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  background: var(--herb);
+  color: #f4f7f0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+  animation: rise 200ms var(--ease) both;
+}
+
+/* القلب */
+.card__fav {
+  position: relative;
+  z-index: 2;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  margin-inline-start: auto;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  transition: color var(--fast) var(--ease), transform var(--fast) var(--ease),
+    background var(--fast) var(--ease);
+}
+
+.card__fav:hover {
+  color: var(--primary);
+  background: var(--surface-2);
+  transform: scale(1.08);
+}
+
+.card__fav.is-on {
+  color: var(--primary);
+}
+
+.card__name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
 }
 
 /* الاسم زرار — والـ ::after بيغطي الكارت كله عشان أي ضغطة تفتح التفاصيل */
@@ -170,7 +173,7 @@
   justify-content: space-between;
   gap: 0.5rem;
   margin-top: auto;
-  padding-top: 0.7rem;
+  padding-top: 0.8rem;
 }
 
 .card__price {
@@ -178,13 +181,21 @@
   align-items: baseline;
   gap: 0.25rem;
   font-family: var(--font-heading);
-  font-size: 1.22rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text);
 }
 
 .card__currency {
   font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* "من" — بتظهر بس لو الصنف ليه أكتر من سعر */
+.card__from {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
   font-weight: 500;
   color: var(--muted);
 }
@@ -240,8 +251,8 @@
   opacity: 0.72;
 }
 
-.card--out .card__media .food-image {
-  filter: grayscale(0.85);
+.card--out::before {
+  filter: grayscale(0.9);
 }
 
 .card--out:hover {
@@ -252,11 +263,12 @@
 
 @media (max-width: 560px) {
   .card__body {
-    padding: 0.7rem 0.7rem 0.65rem;
+    padding: 0.75rem 0.75rem 0.7rem;
+    padding-inline-start: 0.95rem;
   }
 
   .card__name {
-    font-size: 0.94rem;
+    font-size: 0.96rem;
   }
 
   /* على الموبايل الوصف بيتخفي عشان الكارت يفضل صغير وسريع */
@@ -265,7 +277,7 @@
   }
 
   .card__price {
-    font-size: 1.08rem;
+    font-size: 1.1rem;
   }
 
   .card__add {
@@ -274,6 +286,6 @@
   }
 
   .card__foot {
-    padding-top: 0.5rem;
+    padding-top: 0.6rem;
   }
 }

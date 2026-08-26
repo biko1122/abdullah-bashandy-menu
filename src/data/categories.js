@@ -7,67 +7,103 @@
  *  id     → لازم يطابق حقل `category` في src/data/menu.js
  *  name   → الاسم اللي بيظهر للزباين
  *  note   → سطر صغير تحت عنوان القسم (اختياري)
- *  accent → لون القسم، بيستخدم في البادچ وفي صورة الـ placeholder (درجة HSL)
- *  image  → اسم صورة القسم داخل src/assets/images/categories/ (اختياري)
+ *  accent → لون القسم، بيستخدم في البادچ وفي شريط الكارت الملوّن (درجة HSL)
+ * --------------------------------------------------------------------------
+ *  الأقسام دي مترتبة زي المنيو المطبوع بالظبط:
+ *  ساندوتشات → جريل → كريب → حواوشي → علب → طلبات سفرة → أطباق → إضافات
  * ==========================================================================
  */
 
 export const categories = [
   {
-    id: 'foul',
-    name: 'الفول والطعمية',
+    id: 'foul-sandwiches',
+    name: 'ساندوتشات الفول',
     note: 'الأساس اللي المحل قايم عليه',
     accent: 34,
-    image: 'foul.jpg',
+  },
+  {
+    id: 'falafel-sandwiches',
+    name: 'ساندوتشات الفلافل',
+    note: 'مقرمشة وطالعة من الزيت',
+    accent: 92,
+  },
+  {
+    id: 'signature',
+    name: 'ساندوتشات بشندي المميزة',
+    note: 'خلطات المحل المخصوصة',
+    accent: 14,
   },
   {
     id: 'sandwiches',
-    name: 'السندوتشات',
-    note: 'عيش طازة وحشو متظبط',
-    accent: 22,
-    image: 'sandwiches.jpg',
-  },
-  {
-    id: 'breakfast',
-    name: 'الفطار',
-    note: 'أطباق تتاكل على مهل',
-    accent: 44,
-    image: 'breakfast.jpg',
+    name: 'ساندوتشات بشندي',
+    note: 'بطاطس ومقبلات في رغيف',
+    accent: 46,
   },
   {
     id: 'grill',
     name: 'الجريل',
-    note: 'على الفحم… ومشوي صح',
-    accent: 12,
-    image: 'grill.jpg',
+    note: 'في بيتي بان أو عيش سوري',
+    accent: 6,
   },
   {
-    id: 'burger',
-    name: 'البرجر',
-    note: 'لحمة مفرومة في المحل',
-    accent: 18,
-    image: 'burger.jpg',
+    id: 'crepe',
+    name: 'كريب بشندي',
+    note: 'كريب سخن على الصاج',
+    accent: 26,
   },
   {
-    id: 'meals',
-    name: 'الوجبات',
-    note: 'أكلة كاملة بسعر واحد',
-    accent: 28,
-    image: 'meals.jpg',
+    id: 'hawawshi',
+    name: 'حواوشي بشندي',
+    note: 'جديد — لحمة في العيش',
+    accent: 350,
+  },
+  {
+    id: 'boxes',
+    name: 'علب بشندي',
+    note: 'صغير ووسط وكبير — تتاخد للبيت',
+    accent: 200,
+  },
+  {
+    id: 'platters',
+    name: 'طلبات سفرة',
+    note: 'الطلب يشمل قرص وسلطة وعيش',
+    accent: 30,
+  },
+  {
+    id: 'eggs',
+    name: 'أطباق البيض',
+    note: 'اومليت وعجة وبيض',
+    accent: 48,
+  },
+  {
+    id: 'potato-plates',
+    name: 'أطباق البطاطس',
+    note: 'محمرة ومتبلة وبالجبنة',
+    accent: 40,
+  },
+  {
+    id: 'falafel-pieces',
+    name: 'أقراص الفلافل',
+    note: 'بالقطعة',
+    accent: 108,
+  },
+  {
+    id: 'salads',
+    name: 'سلطات ومقبلات',
+    note: 'اللي بيكمّل الطبق',
+    accent: 128,
+  },
+  {
+    id: 'misc',
+    name: 'متنوع',
+    note: 'بوريه وعدس ومسقعة',
+    accent: 20,
   },
   {
     id: 'extras',
-    name: 'الإضافات',
-    note: 'اللي بيكمّل الطبق',
-    accent: 88,
-    image: 'extras.jpg',
-  },
-  {
-    id: 'drinks',
-    name: 'المشروبات',
-    note: 'ساقع وسخن',
+    name: 'إضافات',
+    note: 'زوّد اللي انت عايزه',
     accent: 168,
-    image: 'drinks.jpg',
   },
 ]
 

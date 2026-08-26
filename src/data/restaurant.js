@@ -5,8 +5,8 @@
  *  كل الاسم / العنوان / أرقام التليفون / السوشيال بتتقرأ من الملف ده.
  *  غيّر أي حاجة هنا وهتتغير في كل مكان في الموقع تلقائيًا.
  *
- *  ⚠️ ملاحظة: أي قيمة فيها `PLACEHOLDER` معناها إنها مش رسمية —
- *     استبدلها ببيانات المطعم الحقيقية.
+ *  البيانات دي متاخدة من غلاف المنيو الرسمي.
+ *  ⚠️ أي قيمة فيها isPlaceholder: true معناها إنها لسه مبدئية ومحتاجة تتأكد.
  * ==========================================================================
  */
 
@@ -16,36 +16,62 @@ export const restaurant = {
   nameLatin: 'ABDELALLAH BASHANDY',
   tagline: 'أكل مصري على أصوله',
   taglineLong: 'طعم مصر… من زمان لحد دلوقتي',
-  established: null, // مش متأكدين من سنة التأسيس — سيبها null أو حط رقم
+  established: 1948, // مكتوبة على الشعار: SINCE 1948
 
-  /* --- المكان (بيانات معروفة) --- */
+  /* --- المكان --- */
   location: {
-    district: 'السيدة زينب',
+    district: 'المنيرة',
+    area: 'القصر العيني',
     city: 'القاهرة',
-    address: '31 شارع الشيخ علي يوسف',
+    address: '31 ش الشيخ علي يوسف',
     /* لينك الاتجاهات — بيفتح بحث جوجل ماب على العنوان.
        لو عندك لينك الفرع الرسمي على Google Maps، حطه مكانه. */
     mapsUrl:
       'https://www.google.com/maps/search/?api=1&query=' +
-      encodeURIComponent('عبد الله بشندي 31 شارع الشيخ علي يوسف السيدة زينب القاهرة'),
+      encodeURIComponent('مطعم عبدالله بشندي 31 ش الشيخ علي يوسف المنيرة القصر العيني القاهرة'),
   },
 
   /* --- التواصل ---
-     ⚠️ دي قيم مؤقتة (placeholder). أي حقل قيمته null مش هيظهر في الموقع خالص،
-        وأي حقل فيه isPlaceholder: true هيظهر بعلامة إنه مبدئي. */
+     value → اللي بيتكتب للزباين
+     href  → اللينك اللي بيفتح لما يدوس (سيبه null عشان يظهر نص من غير لينك)
+     note  → سطر صغير جنب البيان (اختياري) */
   contact: {
-    phone: { value: '01xxxxxxxxx', isPlaceholder: true },
-    facebook: { value: null, isPlaceholder: true },
-    instagram: { value: null, isPlaceholder: true },
+    phone: {
+      value: '27922867',
+      href: 'tel:27922867',
+      note: null,
+      isPlaceholder: false,
+    },
+    whatsapp: {
+      value: '01123590986',
+      href: 'https://wa.me/201123590986',
+      note: 'واتساب فقط',
+      isPlaceholder: false,
+    },
+    facebook: {
+      /* الاسم زي ما هو مكتوب على المنيو — لو عندك لينك الصفحة حطه في href. */
+      value: 'مطعم عبدالله بشندي',
+      href: null,
+      note: null,
+      isPlaceholder: false,
+    },
+    instagram: {
+      value: null,
+      href: null,
+      note: null,
+      isPlaceholder: true,
+    },
   },
 
-  /* --- المواعيد --- ⚠️ مؤقتة، عدّلها بمواعيد المحل الحقيقية */
+  /* --- المواعيد --- ⚠️ لسه مؤقتة، عدّلها بمواعيد المحل الحقيقية */
   hours: { text: 'يوميًا من ٦ الصبح لآخر الليل', isPlaceholder: true },
 
   /* --- تفاصيل صغيرة بتظهر في الهيرو والفوتر --- */
   microCopy: {
     heroKicker: 'من قلب البلد',
-    heroPlace: 'السيدة زينب — القاهرة',
+    heroPlace: 'المنيرة — القاهرة',
+    /* مكتوبة على غلاف المنيو */
+    noBranches: 'ليس لنا فروع أخرى',
   },
 }
 

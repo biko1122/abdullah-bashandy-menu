@@ -1,6 +1,6 @@
 # عبد الله بشندي — منيو رقمي ذكي
 
-منيو رقمي لمطعم **عبد الله بشندي** — السيدة زينب، القاهرة.
+منيو رقمي لمطعم **عبد الله بشندي** — المنيرة، القصر العيني، القاهرة.
 
 الموقع ده **مش موقع طلبات**. مفيش تسجيل دخول، مفيش دفع، مفيش توصيل، مفيش checkout، ومفيش أي backend.
 هو منيو كامل + آلة حاسبة للوجبة: تتصفّح، تختار، تظبط الكمية، وتشوف الإجمالي على طول.
@@ -44,13 +44,7 @@ abdallah-bashandy/
     │   ├── brand/
     │   │   ├── logo.svg              ← الشعار الكامل
     │   │   └── logo-mark.svg         ← العلامة المختصرة
-    │   ├── icons/
-    │   └── images/
-    │       ├── hero/                 ← صورة الواجهة الرئيسية
-    │       ├── menu/                 ← ⭐ صور الأصناف (الأهم)
-    │       ├── categories/           ← صور الأقسام (اختيارية)
-    │       ├── atmosphere/           ← صور المحل والشارع
-    │       └── decorative/           ← خلفيات وزخارف
+    │   └── icons/
     │
     ├── components/
     │   ├── Navbar/                   ← الهيدر اللاصق + زرار اختياراتك
@@ -63,10 +57,9 @@ abdallah-bashandy/
     │   ├── SelectionDrawer/          ← قائمة "اختياراتك" والإجمالي
     │   ├── QuantityControl/          ← − 1 +
     │   ├── Search/                   ← خانة البحث
-    │   ├── FoodImage/                ← الصورة أو البديل المرسوم
     │   ├── MealBuilder/              ← "اعمل وجبتك"
     │   ├── PopularSection/           ← "الناس بتحب إيه؟"
-    │   ├── StorySection/             ← "من قلب السيدة زينب"
+    │   ├── StorySection/             ← "من قلب المنيرة"
     │   ├── LocationSection/          ← المكان والتواصل
     │   ├── Footer/
     │   ├── Sheet/                    ← قاعدة النوافذ (وصول + كيبورد)
@@ -88,7 +81,6 @@ abdallah-bashandy/
     │
     ├── utils/
     │   ├── currency.js               ← شكل السعر
-    │   ├── images.js                 ← ربط أسماء الصور بمساراتها
     │   └── search.js                 ← منطق البحث
     │
     └── styles/
@@ -99,69 +91,36 @@ abdallah-bashandy/
 
 ---
 
-## C. دليل الصور
+## C. الشكل — منيو من غير صور
 
-الموقع شغال دلوقتي **من غير أي صورة** — بيرسم بديل بلون القسم وعليه أول كلمة من اسم الصنف.
-أول ما تحط الصورة بالاسم الصح، بتظهر مكان البديل لوحدها. مفيش أي `import` تكتبه.
+الموقع **مفيهوش أي صور أكل** — لا في الكروت، ولا في تفاصيل الصنف، ولا في الواجهة.
+كل صنف بيظهر بالاسم والوصف والسعر بس، زي المنيو المطبوع بالظبط.
 
-**الطريقة:**
+**ليه؟** أسرع في التحميل، مفيش صور بتحمّل الصفحة، ومفيش صنف بيبان شكله أحلى من التاني.
+وكمان مفيش شغل تصوير مطلوب قبل ما الموقع ينزل.
 
-1. حط الصورة في `src/assets/images/menu/`
-2. اتأكد إن اسم الملف هو نفسه المكتوب في حقل `image` في `src/data/menu.js`
+**التمييز بين الأقسام** بيتم بلون رفيع على جنب الكارت — اللون جاي من حقل `accent`
+في `src/data/categories.js` (درجة HSL من ٠ لـ ٣٦٠):
 
-بس كده.
-
-> لو حطيت `foul.webp` بدل `foul.jpg` هتشتغل برضه — البحث بيتم على الاسم من غير الامتداد.
-
-### الصور المطلوبة
-
-| المكان | الملف | الغرض | المقاس المقترح | الصيغة |
-| --- | --- | --- | --- | --- |
-| `images/hero/` | `hero-main.jpg` | صورة الواجهة الرئيسية | 1200 × 1600 (طولي) | JPG / WebP |
-| `images/atmosphere/` | `shopfront.jpg` | واجهة المحل في قسم "من قلب السيدة زينب" | 1200 × 1500 | JPG / WebP |
-| `images/menu/` | `foul.jpg` … | صورة لكل صنف (70 صنف) | 800 × 600 (4:3) | JPG / WebP |
-| `images/categories/` | `foul.jpg`, `grill.jpg` … | صور الأقسام (اختيارية) | 800 × 600 | JPG / WebP |
-| `assets/brand/` | `logo.svg` | الشعار الكامل | متجه (SVG) | SVG |
-| `assets/brand/` | `logo-mark.svg` | العلامة المختصرة | 64 × 64 | SVG |
-| `public/` | `favicon.svg` | أيقونة التبويب | 64 × 64 | SVG |
-
-**نصايح:** خلّي حجم صورة الصنف أقل من 200KB، وصوّر الأكل من فوق أو بزاوية 45° على خلفية غامقة —
-ده بيريّح العين مع خلفية الموقع الورقية.
-
-### أسماء ملفات صور الأصناف
-
-الأسماء دي هي اللي مكتوبة فعلاً في `src/data/menu.js`:
-
+```javascript
+{
+  id: 'grill',
+  name: 'الجريل',
+  note: 'على الفحم… ومشوي صح',
+  accent: 12,        // ← ده لون الشريط والبادچ بتاع القسم
+}
 ```
-الفول والطعمية   foul.jpg · foul-hot-oil.jpg · foul-tahini.jpg · foul-alexandrian.jpg ·
-                 foul-ghee.jpg · foul-eggs.jpg · taameya.jpg · stuffed-taameya.jpg ·
-                 taameya-plate.jpg · foul-taameya-mix.jpg · foul-basterma.jpg
 
-السندوتشات       foul-sandwich.jpg · foul-hot-sandwich.jpg · foul-tahini-sandwich.jpg ·
-                 taameya-sandwich.jpg · stuffed-taameya-sandwich.jpg · potato-sandwich.jpg ·
-                 eggplant-sandwich.jpg · egg-sandwich.jpg · basterma-egg-sandwich.jpg ·
-                 mixed-sandwich.jpg · foul-cheese-sandwich.jpg
+الصور الوحيدة الباقية في المشروع هي الشعار والأيقونة:
 
-الفطار           fried-eggs.jpg · basterma-eggs.jpg · shakshuka.jpg · fried-potato-plate.jpg ·
-                 eggplant-plate.jpg · potato-eggs.jpg · large-foul-plate.jpg ·
-                 breakfast-tray.jpg · egyptian-omelette.jpg
+| المكان | الملف | الغرض | الصيغة |
+| --- | --- | --- | --- |
+| `assets/brand/` | `logo.svg` | الشعار الكامل | SVG |
+| `assets/brand/` | `logo-mark.svg` | العلامة المختصرة | SVG |
+| `public/` | `favicon.svg` | أيقونة التبويب | SVG |
 
-الجريل           kofta.jpg · shish-tawook.jpg · grilled-chicken.jpg · kebab.jpg ·
-                 mixed-grill.jpg · lamb-chops.jpg · kofta-skewer.jpg · grilled-chicken-breast.jpg
-
-البرجر           classic-burger.jpg · cheese-burger.jpg · double-burger.jpg ·
-                 chicken-burger.jpg · spicy-burger.jpg · mushroom-burger.jpg
-
-الوجبات          foul-taameya-meal.jpg · burger-meal.jpg · kofta-meal.jpg ·
-                 tawook-meal.jpg · full-breakfast-meal.jpg
-
-الإضافات         tahini.jpg · baba-ghanoush.jpg · pickles.jpg · green-salad.jpg ·
-                 tahini-salad.jpg · white-cheese.jpg · fries.jpg · hot-sauce.jpg ·
-                 baladi-bread.jpg · white-rice.jpg
-
-المشروبات        tea.jpg · mint-tea.jpg · coffee.jpg · nescafe.jpg · water.jpg ·
-                 cola.jpg · seven-up.jpg · juice.jpg · lemon-mint.jpg · rayeb.jpg
-```
+> الشعار اللي بيظهر في الهيدر والفوتر **مرسوم بالكود** في
+> `src/components/Ornaments/Ornaments.jsx` (مكوّن `BrandMark`) — عشان يفضل حاد على أي شاشة.
 
 ---
 
@@ -171,12 +130,11 @@ abdallah-bashandy/
 
 ```javascript
 {
-  id: 'foul-012',                        // لازم يكون فريد
+  id: 'fs-021',                          // لازم يكون فريد
   name: 'فول بالطماطم',
-  description: 'فول متقلب مع طماطم وبصل.',
-  category: 'foul',                      // id القسم من categories.js
-  price: 30,                             // بالجنيه، رقم بس
-  image: 'foul-tomato.jpg',              // الملف جوه assets/images/menu/
+  description: '',                       // سيبه فاضي لو مفيش وصف
+  category: 'foul-sandwiches',           // id القسم من categories.js
+  price: 14,                             // بالجنيه، رقم بس
   popular: false,                        // true = يظهر في "الناس بتحب إيه؟"
   available: true,                       // false = يظهر رمادي ومش بيتضاف
   tags: ['فول', 'طماطم'],                // كلمات إضافية للبحث
@@ -184,7 +142,12 @@ abdallah-bashandy/
 }
 ```
 
-**صنف باختيارات** (زي نوع العيش أو الحشو):
+> الـ id بيتكوّن من اختصار القسم + رقم: `fs-` فول، `ls-` فلافل، `sig-` مميزة،
+> `sw-` ساندوتشات، `gr-` جريل، `cr-` كريب، `hw-` حواوشي، `bx-` علب،
+> `pl-` طلبات سفرة، `eg-` بيض، `pp-` بطاطس، `fp-` أقراص، `sl-` سلطات،
+> `ms-` متنوع، `ex-` إضافات.
+
+**صنف باختيارات** (زي نوع العيش أو حجم العلبة):
 
 ```javascript
 options: [
@@ -193,12 +156,16 @@ options: [
     name: 'العيش',
     required: true,                      // لازم يختار — و(+) بيفتح النافذة بدل ما يضيف على طول
     choices: [
-      { id: 'baladi', name: 'بلدي', priceDelta: 0 },
-      { id: 'fino',   name: 'فينو', priceDelta: 3 },   // بيزوّد 3 ج.م على السعر
+      { id: 'baity', name: 'بيتي بان', priceDelta: 0 },
+      { id: 'soury', name: 'سوري',     priceDelta: 10 },  // بيزوّد 10 ج.م
     ],
   },
 ]
 ```
+
+في أول `src/data/menu.js` فيه مجموعات جاهزة تقدر تستخدمها على طول بدل ما تكتبها كل مرة:
+`breadSoury5` · `breadSoury10` · `breadSoury15` · `breadSoury20` · `breadSoury25`
+و `sizeSmallMed5` · `sizeSmallMed10` · `sizeMedLarge10` · `sizeMedLarge15` · `sizeMedLarge20`.
 
 نفس الصنف باختيارات مختلفة بيتحسب كسطرين منفصلين في "اختياراتك" — وده مقصود.
 
@@ -209,15 +176,24 @@ options: [
 
 ## E. تغيير الأسعار
 
-كل الأسعار في مكان واحد: `src/data/menu.js` — حقل `price` في كل صنف. أرقام صحيحة بالجنيه.
+كل الأسعار في مكان واحد: `src/data/menu.js` — حقل `price` في كل صنف، بالجنيه المصري.
+الأسعار الموجودة دلوقتي متاخدة من المنيو المطبوع الرسمي.
 
-> ⚠️ **الأسعار الحالية تجريبية.** لما تحط الأسعار الحقيقية، غيّر السطر ده في نفس الملف:
+**الصنف اللي ليه أكتر من سعر** (عيش سوري أغلى، أو علبة كبيرة أغلى) بيتكتب بأقل سعر
+في حقل `price`، والفرق بيتحط في `priceDelta` جوه الاختيارات. الموقع بيكتب "من" قدام
+السعر في الكارت عشان يبان إنه أقل سعر مش السعر الوحيد.
+
+```javascript
+// بطاطس: 20 في البيتي بان، 40 في السوري
+{ id: 'gr-031', name: 'بطاطس', price: 20, options: [breadSoury20], /* … */ }
+```
+
+> لو رجعت تحط أسعار مؤقتة، غيّر السطر ده في نفس الملف عشان تنبيه "أسعار مبدئية"
+> يرجع يظهر في الصفحة الرئيسية والمنيو والفوتر:
 >
 > ```javascript
-> export const PRICES_ARE_DEMO = false
+> export const PRICES_ARE_DEMO = true
 > ```
->
-> وده بيخفّي تنبيه "أسعار مبدئية" من الصفحة الرئيسية والمنيو والفوتر.
 
 **شكل السعر** (أرقام عربية بدل الإنجليزية) — من `src/utils/currency.js`:
 
@@ -260,7 +236,7 @@ export const USE_ARABIC_NUMERALS = false   // خليها true عشان ٣٥ بد
 name: 'عبد الله بشندي',
 nameLatin: 'ABDELALLAH BASHANDY',
 tagline: 'أكل مصري على أصوله',
-location: { district: 'السيدة زينب', city: 'القاهرة', address: '31 شارع الشيخ علي يوسف' },
+location: { district: 'المنيرة', area: 'القصر العيني', city: 'القاهرة', address: '31 ش الشيخ علي يوسف' },
 contact: { phone: { value: '01xxxxxxxxx', isPlaceholder: true }, … },
 ```
 
@@ -329,4 +305,4 @@ const {
 - **الموبايل الأول** — bottom sheet للتفاصيل، شريط أقسام أفقي، وشريط "اختياراتك" عايم تحت.
 - **إمكانية الوصول** — HTML دلالي، تركيز محصور جوه النوافذ، إغلاق بـ Escape،
   `aria-label` على كل الأزرار، رابط تخطّي للمحتوى، واحترام `prefers-reduced-motion`.
-- **الأداء** — صور المنيو بـ `loading="lazy"`، ومفيش أي مكتبة خارجية غير React والراوتر.
+- **الأداء** — مفيش صور خالص، ومفيش أي مكتبة خارجية غير React والراوتر.

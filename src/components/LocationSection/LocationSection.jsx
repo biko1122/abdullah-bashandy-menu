@@ -10,11 +10,24 @@ import './LocationSection.css'
 export default function LocationSection() {
   const { location, contact, hours } = restaurant
 
+  /* كل بيان تواصل بيتقرأ بنفس الشكل: value + href + note */
+  const contactRow = (key, label, entry) => ({
+    key,
+    label,
+    value: entry.value,
+    href: entry.href,
+    note: entry.note,
+    external: key !== 'phone',
+    placeholder: entry.isPlaceholder,
+  })
+
   const rows = [
     {
       key: 'address',
       label: 'العنوان',
-      value: `${location.address} — ${location.district}، ${location.city}`,
+      value: [location.address, location.district, location.area, location.city]
+        .filter(Boolean)
+        .join('، '),
       placeholder: false,
     },
     {
@@ -23,27 +36,10 @@ export default function LocationSection() {
       value: hours.value ?? hours.text,
       placeholder: hours.isPlaceholder,
     },
-    {
-      key: 'phone',
-      label: 'تليفون',
-      value: contact.phone.value,
-      href: contact.phone.value ? `tel:${contact.phone.value}` : null,
-      placeholder: contact.phone.isPlaceholder,
-    },
-    {
-      key: 'facebook',
-      label: 'فيسبوك',
-      value: contact.facebook.value,
-      href: contact.facebook.value,
-      placeholder: contact.facebook.isPlaceholder,
-    },
-    {
-      key: 'instagram',
-      label: 'إنستجرام',
-      value: contact.instagram.value,
-      href: contact.instagram.value,
-      placeholder: contact.instagram.isPlaceholder,
-    },
+    contactRow('phone', 'تليفون', contact.phone),
+    contactRow('whatsapp', 'واتساب', contact.whatsapp),
+    contactRow('facebook', 'فيسبوك', contact.facebook),
+    contactRow('instagram', 'إنستجرام', contact.instagram),
   ].filter((row) => row.value)
 
   return (
@@ -67,12 +63,17 @@ export default function LocationSection() {
               <dt>{row.label}</dt>
               <dd>
                 {row.href ? (
-                  <a href={row.href} target={row.key === 'phone' ? undefined : '_blank'} rel="noreferrer noopener">
+                  <a
+                    href={row.href}
+                    target={row.external ? '_blank' : undefined}
+                    rel="noreferrer noopener"
+                  >
                     {row.value}
                   </a>
                 ) : (
                   row.value
                 )}
+                {row.note ? <span className="location__note">{row.note}</span> : null}
                 {row.placeholder ? <span className="location__placeholder">مبدئي</span> : null}
               </dd>
             </div>

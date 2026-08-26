@@ -23,9 +23,13 @@
 
 .hero__inner {
   position: relative;
-  display: grid;
-  gap: clamp(1.75rem, 5vw, 3rem);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero__text {
+  max-width: 62ch;
 }
 
 /* ================================ الكلام ================================ */
@@ -133,101 +137,22 @@
   margin: 0;
 }
 
-/* ================================ الصورة ================================ */
+/* ================================ الزخرفة ================================ */
 
-.hero__visual {
-  position: relative;
-}
-
-.hero__frame {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  border-radius: 200px 200px var(--radius-lg) var(--radius-lg);
-  overflow: hidden;
-  container-type: inline-size;
-  border: 1px solid var(--border-strong);
-  box-shadow: var(--shadow-lg);
-  background: var(--surface-2);
-}
-
-.hero__frame .food-image {
-  transition: transform 900ms var(--ease);
-}
-
-.hero__frame:hover .food-image {
-  transform: scale(1.03);
-}
-
-/* ختم صغير مايل فوق الصورة */
-.hero__badge {
-  position: absolute;
-  inset-block-end: 1rem;
-  inset-inline-start: 1rem;
-  z-index: 2;
-  transform: rotate(-3deg);
-  font-family: var(--font-heading);
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--accent-soft);
-  background: rgba(23, 18, 12, 0.88);
-  border: 1px solid rgba(230, 192, 120, 0.35);
-  border-radius: var(--radius-pill);
-  padding: 0.4rem 1rem;
-  backdrop-filter: blur(4px);
-}
-
-.hero__caption {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 0.7rem;
-  font-size: 0.76rem;
-  color: var(--muted);
-}
-
-.hero__caption span {
-  color: var(--accent);
-  font-size: 0.6rem;
-}
-
-.hero__side {
-  position: absolute;
-  inset-block-start: 1.5rem;
-  inset-inline-end: -1.75rem;
-  width: 120px;
-  transform: rotate(90deg);
-  transform-origin: center;
-  display: none;
+.hero__strip {
+  margin-top: clamp(1.75rem, 5vw, 2.75rem);
+  opacity: 0.75;
 }
 
 /* ================================ المقاسات ================================ */
 
 @media (min-width: 860px) {
-  .hero__inner {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: clamp(2rem, 5vw, 4rem);
-  }
-
-  .hero__frame {
-    aspect-ratio: 3 / 4;
-  }
-
-  .hero__side {
-    display: block;
+  .hero__lead {
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 859px) {
-  /* على الموبايل الصورة بتيجي فوق الكلام */
-  .hero__visual {
-    order: -1;
-  }
-
-  .hero__frame {
-    aspect-ratio: 16 / 11;
-    border-radius: var(--radius-lg);
-  }
-
   .hero__meta {
     gap: 1.25rem;
     margin-top: 1.5rem;

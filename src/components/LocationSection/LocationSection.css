@@ -63,6 +63,15 @@
   padding: 0.05rem 0.45rem;
 }
 
+/* سطر صغير جنب البيان — زي "واتساب فقط" */
+.location__note {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-inline-start: 0.4rem;
+}
+
 .location__cta {
   justify-self: start;
 }

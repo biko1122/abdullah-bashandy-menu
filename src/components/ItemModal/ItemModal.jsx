@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
 import Sheet from '../Sheet/Sheet'
-import FoodImage from '../FoodImage/FoodImage'
 import QuantityControl from '../QuantityControl/QuantityControl'
 import { HeartIcon } from '../Ornaments/Ornaments'
 import { useSelection } from '../../context/SelectionContext'
@@ -68,17 +67,6 @@ export default function ItemModal({ item, open, onClose }) {
   return (
     <Sheet open={open} onClose={onClose} labelledBy="item-modal-title" variant="modal">
       <div className="item">
-        <div className="item__media">
-          <FoodImage
-            folder="menu"
-            src={shown.image}
-            alt={shown.name}
-            label={shown.name}
-            hue={category?.accent ?? 30}
-            eager
-          />
-        </div>
-
         <div className="item__content">
           <div className="item__meta">
             <span className="item__category">{category?.name}</span>
@@ -104,7 +92,8 @@ export default function ItemModal({ item, open, onClose }) {
 
           <p className="item__desc">{shown.description}</p>
 
-          <p className="item__price">{formatPrice(shown.price)}</p>
+          {/* السعر بيتحدّث مع الاختيارات (عيش سوري، حجم العلبة… إلخ) */}
+          <p className="item__price">{formatPrice(unitPrice)}</p>
 
           {(shown.options || []).map((group) => (
             <fieldset className="item__group" key={group.id}>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import Sheet from '../Sheet/Sheet'
 import QuantityControl from '../QuantityControl/QuantityControl'
-import FoodImage from '../FoodImage/FoodImage'
 import { Divider } from '../Ornaments/Ornaments'
 import { useSelection } from '../../context/SelectionContext'
 import { formatNumber, formatPrice } from '../../utils/currency'
@@ -81,17 +80,11 @@ export default function SelectionDrawer({ open, onClose }) {
             {lines.map((line) => {
               const category = getCategory(line.item.category)
               return (
-                <li className="selline" key={line.key}>
-                  <div className="selline__media">
-                    <FoodImage
-                      folder="menu"
-                      src={line.item.image}
-                      alt=""
-                      label={line.item.name}
-                      hue={category?.accent ?? 30}
-                    />
-                  </div>
-
+                <li
+                  className="selline"
+                  key={line.key}
+                  style={{ '--line-hue': category?.accent ?? 30 }}
+                >
                   <div className="selline__info">
                     <p className="selline__name">{line.item.name}</p>
                     {line.choiceSummary ? (
