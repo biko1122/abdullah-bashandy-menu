@@ -250,7 +250,7 @@ export const menu = [
   {
     id: 'fs-009',
     name: 'فول بشندي مخصوص',
-    description: '',
+    description: 'فول بالشبت والتوم',
     category: 'foul-sandwiches',
     price: 11,
     popular: true,
@@ -366,17 +366,6 @@ export const menu = [
     popular: false,
     available: true,
     tags: ['فول', 'اسكندراني', 'بيض'],
-    options: [],
-  },
-  {
-    id: 'fs-020',
-    name: 'فول علي باذنجان',
-    description: 'فول متقلب على باذنجان مقلي',
-    category: 'foul-sandwiches',
-    price: 13,
-    popular: false,
-    available: true,
-    tags: ['فول', 'باذنجان'],
     options: [],
   },
 
@@ -845,7 +834,7 @@ export const menu = [
   {
     id: 'sw-014',
     name: 'عجة بلدي مخصوص',
-    description: '',
+    description: 'عجة بلدي بسمسم زيادة',
     category: 'sandwiches',
     price: 30,
     popular: false,
@@ -1047,7 +1036,7 @@ export const menu = [
   {
     id: 'gr-008',
     name: 'سوسيس مكسيكان',
-    description: 'سوسيس بصوص مكسيكي حار',
+    description: 'سوسيس بالخضار والبصل والصوص',
     category: 'grill',
     price: 60,
     popular: false,
@@ -1058,7 +1047,7 @@ export const menu = [
   {
     id: 'gr-009',
     name: 'سوسيس بيكيني',
-    description: '',
+    description: 'سوسيس متقطع بالفلفل الملون والبصل والمخلل',
     category: 'grill',
     price: 60,
     popular: false,
@@ -1234,7 +1223,7 @@ export const menu = [
   {
     id: 'gr-025',
     name: 'اباتشي',
-    description: '',
+    description: 'أومليت بالخضار والسجق والجبنة',
     category: 'grill',
     price: 50,
     popular: false,
@@ -1631,7 +1620,7 @@ export const menu = [
   {
     id: 'bx-002',
     name: 'علبة فول محوج',
-    description: 'فول متبل بخلطة توابل حارة',
+    description: 'فول متحوش بزيت الذرة',
     category: 'boxes',
     price: 20,
     popular: false,
@@ -2046,7 +2035,7 @@ export const menu = [
   {
     id: 'eg-007',
     name: 'طلب بيتزا',
-    description: '',
+    description: 'أومليت بالبسطرمة والخضار والجبنة',
     category: 'eggs',
     price: 60,
     popular: false,
@@ -2173,7 +2162,7 @@ export const menu = [
   {
     id: 'fp-003',
     name: 'قرص فلافل صغير',
-    description: 'قرص طعمية صغير',
+    description: 'قرص طعمية بحجم صغير',
     category: 'falafel-pieces',
     price: 3,
     popular: false,
@@ -2184,7 +2173,7 @@ export const menu = [
   {
     id: 'fp-004',
     name: 'قرص فلافل قطايف',
-    description: '',
+    description: 'قرص نص كورة مغطى بالسمسم ومحمّر زيادة',
     category: 'falafel-pieces',
     price: 6,
     popular: false,
@@ -2195,7 +2184,7 @@ export const menu = [
   {
     id: 'fp-005',
     name: 'قرص فلافل قماطي',
-    description: 'جديد',
+    description: 'طعمية مدوّرة زي الكورة — أصغر حجم',
     category: 'falafel-pieces',
     price: 2.5,
     popular: false,
