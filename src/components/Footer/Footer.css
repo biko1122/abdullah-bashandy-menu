@@ -1,15 +1,15 @@
 .footer {
   background: var(--charcoal-2);
   color: var(--on-dark);
-  padding-block: clamp(2rem, 5vw, 3rem) 1rem;
+  padding-block: 0 1rem;
   margin-block-start: auto;
 }
 
 .footer__inner {
   display: grid;
   gap: 1.75rem;
-  padding-bottom: 1.75rem;
-  border-bottom: 1px solid rgba(230, 192, 120, 0.16);
+  padding-block: clamp(2rem, 5vw, 3rem) 1.75rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .footer__brand {

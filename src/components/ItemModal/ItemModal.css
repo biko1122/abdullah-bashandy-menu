@@ -185,7 +185,7 @@
 
 .item__add-total {
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.22);
   border-radius: var(--radius-pill);
   padding: 0.1rem 0.6rem;
 }

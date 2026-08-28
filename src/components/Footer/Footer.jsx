@@ -10,6 +10,8 @@ export default function Footer() {
 
   return (
     <footer className="footer">
+      <div className="ornament" aria-hidden="true" />
+
       <div className="shell footer__inner">
         <div className="footer__brand">
           <BrandMark size={44} />
@@ -23,6 +25,7 @@ export default function Footer() {
           <a href={restaurant.location.mapsUrl} target="_blank" rel="noreferrer noopener">
             الاتجاهات
           </a>
+          <Link to="/complaint">شكوى</Link>
         </nav>
 
         <p className="footer__place">

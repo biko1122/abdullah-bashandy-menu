@@ -170,6 +170,8 @@ export default function Checkout() {
 
   return (
     <div className="checkout">
+      <div className="ornament" aria-hidden="true" />
+
       <div className="shell checkout__inner">
         <header className="checkout__head">
           <button type="button" className="checkout__back" onClick={() => navigate(-1)}>

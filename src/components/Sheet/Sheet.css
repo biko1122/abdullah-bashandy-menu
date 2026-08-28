@@ -8,7 +8,7 @@
 .sheet__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(23, 18, 12, 0.55);
+  background: rgba(12, 2, 2, 0.66);
   backdrop-filter: blur(3px);
   animation: sheet-fade var(--normal) var(--ease) both;
 }
@@ -51,7 +51,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(251, 246, 236, 0.9);
+  background: rgba(109, 31, 31, 0.92);
   color: var(--text);
   border: 1px solid var(--border);
   backdrop-filter: blur(6px);
@@ -60,7 +60,7 @@
 
 .sheet__close:hover {
   background: var(--primary);
-  color: #fff7ea;
+  color: var(--on-primary);
   border-color: var(--primary);
   transform: rotate(90deg);
 }

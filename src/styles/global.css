@@ -6,27 +6,29 @@
    ========================================================================== */
 
 :root {
-  /* ---------- الألوان الأساسية ---------- */
-  --background: #f2e9db; /* ورق قديم */
-  --surface: #fbf6ec; /* سطح الكروت */
-  --surface-2: #efe4d2; /* سطح أغمق شوية */
-  --primary: #8f2f19; /* طوبي محروق — لون المحل */
-  --primary-deep: #6d2212;
-  --accent: #c4892b; /* دهب / كركم */
-  --accent-soft: #e6c078;
-  --herb: #4c6141; /* أخضر بقدونس */
-  --charcoal: #17120c; /* فحم الشوّاية */
-  --charcoal-2: #241c13;
+  /* ---------- الألوان — مأخوذة من المنيو المطبوع ---------- */
+  --background: #4a0909; /* بورجوندي الصفحة */
+  --surface: #5c1414; /* سطح الكروت */
+  --surface-2: #6d1f1f; /* سطح أفتح شوية */
+  --primary: #e8862a; /* كهرماني — لون عناوين الأقسام في المنيو */
+  --primary-deep: #c96a12;
+  --on-primary: #2e0606; /* النص اللي بيقع فوق الكهرماني */
+  --accent: #d9a94e; /* دهب الزخارف */
+  --accent-soft: #fdbf58; /* دهب فاتح */
+  --brass: #b98a3c; /* نحاسي */
+  --herb: #9ac47c; /* أخضر — التأكيد والنجاح */
+  --charcoal: #1c1414; /* أسود قرص الشعار */
+  --charcoal-2: #2a1c1c;
 
-  --text: #1d1710;
-  --text-soft: #4a3f33;
-  --muted: #857463;
-  --border: #ddcdb4;
-  --border-strong: #c9b492;
+  --text: #f8f0e6;
+  --text-soft: #e2ccbe;
+  --muted: #c39f95;
+  --border: rgba(217, 169, 78, 0.2);
+  --border-strong: rgba(217, 169, 78, 0.42);
 
   /* ألوان فوق الخلفيات الغامقة */
-  --on-dark: #f7efe1;
-  --on-dark-muted: #b9a68d;
+  --on-dark: #f8f0e6;
+  --on-dark-muted: #c39f95;
 
   /* ---------- الخطوط ---------- */
   --font-display: 'Aref Ruqaa', 'Reem Kufi', serif; /* الاسم والعناوين الكبيرة */
@@ -43,14 +45,17 @@
   --radius-pill: 999px;
 
   /* ---------- الظلال ---------- */
-  --shadow-sm: 0 1px 2px rgba(35, 22, 10, 0.06), 0 2px 6px rgba(35, 22, 10, 0.04);
-  --shadow: 0 2px 4px rgba(35, 22, 10, 0.06), 0 10px 26px rgba(35, 22, 10, 0.09);
-  --shadow-lg: 0 8px 20px rgba(35, 22, 10, 0.12), 0 26px 60px rgba(35, 22, 10, 0.16);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.22);
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.32), 0 10px 26px rgba(0, 0, 0, 0.34);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.4), 0 26px 60px rgba(0, 0, 0, 0.5);
 
   /* ---------- الحركة ---------- */
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
   --fast: 160ms;
   --normal: 280ms;
+
+  /* ارتفاع شريط الزخرفة الذهبية */
+  --orn-h: 42px;
 
   /* ارتفاع الشريط السفلي على الموبايل — بنستخدمه عشان المحتوى ميتغطاش */
   --bar-space: 0px;
@@ -79,6 +84,8 @@ html {
 body {
   min-height: 100dvh;
   background-color: var(--background);
+  /* نقشة السيغايها — نفس نقشة خلفية المنيو المطبوع */
+  background-image: url('../assets/pattern-seigaiha.svg');
   color: var(--text);
   font-family: var(--font-body);
   font-size: 16px;
@@ -89,14 +96,14 @@ body {
   overflow-x: hidden;
 }
 
-/* حبيبات ورق خفيفة على الخلفية — بتدي إحساس المنيو المطبوع */
+/* حبيبات طباعة خفيفة فوق النقشة — بتكسر نعومة الشاشة */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.28;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
 }
 
@@ -253,7 +260,7 @@ h4 {
 
 .section-head__title {
   font-size: clamp(1.6rem, 4.5vw, 2.5rem);
-  color: var(--text);
+  color: var(--primary); /* كهرماني — نفس لون عناوين الأقسام في المنيو */
 }
 
 .section-head__note {
@@ -275,7 +282,7 @@ h4 {
 
 .btn {
   --btn-bg: var(--primary);
-  --btn-fg: #fff7ea;
+  --btn-fg: var(--on-primary);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -322,7 +329,7 @@ h4 {
 }
 
 .btn--dark:hover {
-  background: #2c2116;
+  background: var(--charcoal-2);
 }
 
 .btn--block {
@@ -340,13 +347,13 @@ h4 {
   letter-spacing: 0.02em;
   padding: 0.2rem 0.6rem;
   border-radius: var(--radius-pill);
-  background: rgba(196, 137, 43, 0.16);
-  color: #7a5411;
-  border: 1px solid rgba(196, 137, 43, 0.45);
+  background: rgba(217, 169, 78, 0.14);
+  color: var(--accent-soft);
+  border: 1px solid rgba(217, 169, 78, 0.4);
 }
 
 .stamp--muted {
-  background: rgba(133, 116, 99, 0.14);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--muted);
   border-color: var(--border-strong);
 }
@@ -436,6 +443,118 @@ body.is-locked {
   overflow: hidden;
 }
 
+
+/* ==========================================================================
+   حقول الفورم — مشتركة بين صفحة الطلب وصفحة الشكاوي
+   ========================================================================== */
+
+/* ------------------------------- الحقول ------------------------------- */
+
+.cfield {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+.cfield:last-child {
+  margin-bottom: 0;
+}
+
+.cfield label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cfield__optional {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-inline-start: 0.3rem;
+}
+
+.cfield input,
+.cfield textarea {
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  background: var(--background);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.95rem;
+  transition: border-color var(--fast) var(--ease), box-shadow var(--fast) var(--ease);
+}
+
+.cfield textarea {
+  resize: vertical;
+  min-height: 62px;
+  line-height: 1.7;
+}
+
+.cfield input:focus,
+.cfield textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 16%, transparent);
+}
+
+.cfield input[aria-invalid='true'],
+.cfield textarea[aria-invalid='true'] {
+  border-color: #ff8f7c;
+}
+
+.cerr {
+  font-size: 0.82rem;
+  color: #ff8f7c;
+  font-weight: 500;
+}
+
+.chint {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* ------------------------------ التنبيهات ----------------------------- */
+
+.calert {
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 143, 124, 0.45);
+  background: rgba(255, 143, 124, 0.1);
+}
+
+.calert__title {
+  font-weight: 700;
+  color: #ff8f7c;
+  margin-bottom: 0.2rem;
+}
+
+.calert__text {
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+/* ---------- شريط الزخرفة الذهبية (زخرفة رأس المنيو) ---------- */
+
+.ornament {
+  height: var(--orn-h);
+  background: url('../assets/ornament-arch.svg') repeat-x center top / auto 100%;
+  opacity: 0.85;
+  flex: none;
+  pointer-events: none;
+}
+
+/* مقلوبة — للاستخدام في أسفل القسم */
+.ornament--up {
+  transform: scaleY(-1);
+}
+
+@media (max-width: 560px) {
+  :root {
+    --orn-h: 28px;
+  }
+}
 
 /* ---------- علامة المحل (الشعار الرسمي) ---------- */
 

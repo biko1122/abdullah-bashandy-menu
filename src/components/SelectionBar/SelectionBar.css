@@ -28,13 +28,13 @@
   border-radius: var(--radius-pill);
   background: var(--charcoal);
   color: var(--on-dark);
-  box-shadow: 0 10px 30px rgba(23, 18, 12, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   border: 1px solid rgba(230, 192, 120, 0.22);
   transition: transform var(--fast) var(--ease), background var(--fast) var(--ease);
 }
 
 .selbar__button:hover {
-  background: #2a2016;
+  background: var(--charcoal-2);
   transform: translateY(-2px);
 }
 
@@ -59,7 +59,7 @@
   padding-inline: 0.35rem;
   border-radius: var(--radius-pill);
   background: var(--primary);
-  color: #fff7ea;
+  color: var(--on-primary);
   font-size: 0.78rem;
   font-weight: 700;
 }

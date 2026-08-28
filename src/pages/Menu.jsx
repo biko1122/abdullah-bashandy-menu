@@ -69,6 +69,8 @@ export default function Menu() {
   return (
     <>
       <div className="menu-page">
+        <div className="ornament" aria-hidden="true" />
+
         <header className="menu-page__head shell">
           <p className="menu-page__kicker">المنيو الكامل</p>
           <h1 className="menu-page__title">كل اللي عندنا</h1>

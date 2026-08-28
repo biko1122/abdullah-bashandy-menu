@@ -7,6 +7,7 @@ import SelectionDrawer from './components/SelectionDrawer/SelectionDrawer'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Checkout from './pages/Checkout'
+import Complaint from './pages/Complaint'
 import './App.css'
 
 /**
@@ -53,6 +54,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/complaint" element={<Complaint />} />
           {/* أي رابط تاني بيرجع للرئيسية */}
           <Route path="*" element={<Home />} />
         </Routes>

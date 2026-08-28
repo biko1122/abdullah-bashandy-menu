@@ -57,7 +57,7 @@
 }
 
 .catnav__chip.is-active .catnav__count {
-  background: rgba(247, 239, 225, 0.16);
+  background: rgba(253, 191, 88, 0.18);
   color: var(--accent-soft);
 }
 

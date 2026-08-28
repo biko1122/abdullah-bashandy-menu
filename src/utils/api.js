@@ -120,6 +120,19 @@ export const createOrder = (payload) =>
 
 export const fetchOrder = (id) => request(`/api/orders/${id}`)
 
+/* ------------------------------ الشكاوي ------------------------------ */
+
+/**
+ * إرسال شكوى.
+ *
+ * الرد بيرجّع رقم الشكوى بس — عمدًا. السيرفر مبيرجّعش نص الشكوى
+ * ولا الرقم تاني، عشان المسار مفتوح من غير تسجيل دخول.
+ *
+ * payload = { name, phone, message, orderNumber? }
+ */
+export const createComplaint = (payload) =>
+  request('/api/complaints', { method: 'POST', body: payload })
+
 /** بيتأكد إن السيرفر شغال — بنستخدمه قبل ما نوري صفحة الطلب. */
 export const checkHealth = () => request('/api/health')
 

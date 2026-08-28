@@ -55,5 +55,5 @@
 
 .search__clear:hover {
   background: var(--primary);
-  color: #fff7ea;
+  color: var(--on-primary);
 }

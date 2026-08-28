@@ -12,6 +12,9 @@ export default function Hero() {
 
   return (
     <section className="hero" aria-labelledby="hero-title">
+      {/* شريط الزخرفة الذهبية — نفس زخرفة رأس صفحات المنيو المطبوع */}
+      <div className="hero__ornament ornament" aria-hidden="true" />
+
       <div className="hero__inner shell">
         <div className="hero__text">
           <p className="hero__kicker">

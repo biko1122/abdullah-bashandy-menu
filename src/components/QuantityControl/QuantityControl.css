@@ -22,7 +22,7 @@
 
 .qty__btn:hover:not(:disabled) {
   background: var(--primary);
-  color: #fff7ea;
+  color: var(--on-primary);
 }
 
 .qty__btn:active:not(:disabled) {
