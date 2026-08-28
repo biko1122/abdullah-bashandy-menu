@@ -4,6 +4,7 @@ import CategoryNav from '../components/CategoryNav/CategoryNav'
 import MenuSection from '../components/MenuSection/MenuSection'
 import MenuCard from '../components/MenuCard/MenuCard'
 import Search from '../components/Search/Search'
+import ClosedNotice from '../components/ClosedNotice/ClosedNotice'
 import ItemModal from '../components/ItemModal/ItemModal'
 import { categories, getCategory } from '../data/categories'
 import { PRICES_ARE_DEMO } from '../data/menu'
@@ -78,6 +79,8 @@ export default function Menu() {
             <span className="num">{formatNumber(menu.length)}</span> صنف — دور، افتح التفاصيل،
             وابني وجبتك والحساب بيتظبط لوحده.
           </p>
+
+          <ClosedNotice compact />
 
           <div className="menu-page__search">
             <Search value={query} onChange={setQuery} />

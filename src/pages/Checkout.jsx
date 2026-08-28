@@ -5,6 +5,7 @@ import { useSelection } from '../context/SelectionContext'
 import { formatPrice } from '../utils/currency'
 import { MIN_ORDER_TOTAL, calculateTotals } from '../data/ordering'
 import { createOrder, ApiError } from '../utils/api'
+import ClosedNotice, { useOrderingOpen } from '../components/ClosedNotice/ClosedNotice'
 import './Checkout.css'
 
 /**
@@ -53,12 +54,17 @@ export default function Checkout() {
 
   const totals = useMemo(() => calculateTotals(subtotal, 'DELIVERY'), [subtotal])
   const belowMinimum = MIN_ORDER_TOTAL > 0 && subtotal < MIN_ORDER_TOTAL
+  /* بنستقبل طلبات دلوقتي؟ السيرفر بيرفض برضه لو الوقت غلط —
+     ده بس عشان الزبون ميملاش الفورم على الفاضي */
+  const orderingOpen = useOrderingOpen()
 
   /* ------------------------- الإرسال ------------------------- */
 
   const handleSubmit = async (event) => {
     event.preventDefault()
     setServerError(null)
+
+    if (!orderingOpen) return
 
     const found = validate({ name, phone, address })
     setErrors(found)
@@ -182,6 +188,7 @@ export default function Checkout() {
         </header>
 
         <form className="checkout__form" onSubmit={handleSubmit} noValidate>
+          <ClosedNotice />
           {/* ------------------ 1. بياناتك ------------------ */}
           <section className="cbox">
             <h2 className="cbox__title">
@@ -340,9 +347,9 @@ export default function Checkout() {
           <button
             type="submit"
             className="btn checkout__submit"
-            disabled={submitting || belowMinimum}
+            disabled={submitting || belowMinimum || !orderingOpen}
           >
-            {submitting ? 'بنبعت الطلب…' : 'اطلب دلوقتي'}
+            {submitting ? 'بنبعت الطلب…' : orderingOpen ? 'اطلب دلوقتي' : 'قافلين دلوقتي'}
             {!submitting ? (
               <span className="checkout__submit-total num">{formatPrice(totals.total)}</span>
             ) : null}

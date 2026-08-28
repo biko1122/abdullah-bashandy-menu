@@ -1,0 +1,50 @@
+/* ==========================================================================
+   لافتة "قافلين دلوقتي"
+   ========================================================================== */
+
+.closed {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--charcoal) 72%, transparent);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-sm);
+}
+
+.closed__icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex: none;
+}
+
+.closed__text {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.closed__title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--accent-soft);
+}
+
+.closed__sub {
+  font-size: 0.88rem;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+/* النسخة المختصرة — للاستخدام جوّه صفحة فيها لافتات تانية */
+.closed--compact {
+  padding: 0.7rem 0.9rem;
+}
+
+.closed--compact .closed__icon {
+  font-size: 1.25rem;
+}
+
+.closed--compact .closed__title {
+  font-size: 0.95rem;
+}

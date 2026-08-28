@@ -40,7 +40,8 @@ export default function Footer() {
           © <span className="num">{year}</span> {restaurant.name}
         </p>
         <p className="footer__note">
-          منيو رقمي للعرض والحساب بس — مفيش طلب أونلاين.
+          الطلب من الموقع متاح من <span className="num">6</span> الصبح لحد{' '}
+          <span className="num">1</span> بعد نص الليل — توصيل بس، والدفع كاش عند الاستلام.
           {PRICES_ARE_DEMO ? ' الأسعار المعروضة مبدئية.' : ''}
         </p>
       </div>
