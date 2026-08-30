@@ -291,3 +291,15 @@
     padding-top: 0.6rem;
   }
 }
+
+/* أطباق السفرة — بتتعرض في المنيو بس مبتتطلبش (الموقع ديليفري بس) */
+.card__dinein-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.12rem 0.45rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  white-space: nowrap;
+}

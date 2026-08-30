@@ -38,6 +38,9 @@ const transformApiMenu = (categories) => {
         price: product.price,
         popular: Boolean(product.isPopular),
         available: product.isAvailable !== false,
+        /* أطباق السفرة: بتتعرض عشان الزبون يشوف المنيو كامل،
+           بس مبتتطلبش — الموقع ديليفري بس */
+        dineInOnly: product.dineInOnly === true,
         tags: product.tags ?? [],
         options: (product.optionGroups ?? []).map((group) => ({
           id: group.key,

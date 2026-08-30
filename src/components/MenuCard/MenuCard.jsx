@@ -36,7 +36,7 @@ export default function MenuCard({ item, onOpen }) {
   )
 
   const handleAdd = () => {
-    if (!item.available) return
+    if (!item.available || item.dineInOnly) return
     if (needsChoices) {
       onOpen(item)
       return
@@ -61,6 +61,9 @@ export default function MenuCard({ item, onOpen }) {
               <span className="card__stamp">الأكثر طلبًا</span>
             ) : null}
             {!item.available ? <span className="card__out-tag">خلص النهاردة</span> : null}
+            {item.available && item.dineInOnly ? (
+              <span className="card__dinein-tag">🍽️ في المحل بس</span>
+            ) : null}
             {countInSelection > 0 ? (
               <span className="card__count num" aria-hidden="true">
                 {countInSelection}
@@ -101,9 +104,13 @@ export default function MenuCard({ item, onOpen }) {
             type="button"
             className="card__add"
             onClick={handleAdd}
-            disabled={!item.available}
+            disabled={!item.available || item.dineInOnly}
             aria-label={
-              item.available ? `ضيف ${item.name} لاختياراتك` : `${item.name} مش متاح دلوقتي`
+              item.dineInOnly
+                ? `${item.name} بيتقدّم في المحل بس`
+                : item.available
+                  ? `ضيف ${item.name} لاختياراتك`
+                  : `${item.name} مش متاح دلوقتي`
             }
           >
             <svg viewBox="0 0 18 18" width="16" height="16" aria-hidden="true">
